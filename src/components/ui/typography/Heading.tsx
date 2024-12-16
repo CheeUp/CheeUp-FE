@@ -5,17 +5,17 @@ interface PHeading extends PropsWithChildren {
 }
 
 export function H1({ children, className = '' }: PHeading) {
-  return <h1 className={'mt-9 mb-6 text-heading1 font-bold' + className}>{children}</h1>;
+  return <h1 className={'mt-9 mb-6 text-heading1 font-bold ' + className}>{children}</h1>;
 }
 
 export function H2({ children, className = '' }: PHeading) {
-  return <h2 className={'text-heading2 font-bold' + className}>{children}</h2>;
+  return <h2 className={'text-heading2 font-bold ' + className}>{children}</h2>;
 }
 
 export function H3({ children, className = '' }: PHeading) {
-  return <h3 className={'text-heading3 font-bold' + className}>{children}</h3>;
+  return <h3 className={'text-heading3 font-bold ' + className}>{children}</h3>;
 }
 
 export function H4({ children, className = '' }: PHeading) {
-  return <h4 className={'text-heading4 + font-bold' + className}>{children}</h4>;
+  return <h4 className={'text-heading4 font-bold ' + className}>{children}</h4>;
 }
