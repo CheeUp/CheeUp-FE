@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div className='App'>
+    <div className='text-heading1'>
       <div>안녕하세요!</div>
     </div>
   );
