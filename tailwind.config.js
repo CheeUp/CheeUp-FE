@@ -69,6 +69,9 @@ export default {
         base: 'var(--width-base)',
       },
     },
+    fontFamily: {
+      Pretendard: ['Pretendard'],
+    },
   },
   plugins: [require('tailwindcss-animate')],
 };
