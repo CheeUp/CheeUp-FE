@@ -37,10 +37,10 @@ export default {
         },
       },
       textColor: {
-        black: 'var(--black)',
-        white: 'var(--white)',
-        deepgray: 'var(--deepgray)',
-        disabled: 'var(--disabled)',
+        black: 'var(--text-black)',
+        white: 'var(--text-white)',
+        deepgray: 'var(--text-deepgray)',
+        disabled: 'var(--text-disabled)',
       },
       fontSize: {
         heading1: 'var(--text-heading1)',
