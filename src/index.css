@@ -68,3 +68,7 @@
     'Segoe UI Symbol', 'Noto Color Emoji';
   color: var(--text-black);
 }
+
+body {
+  background-color: var(--background);
+}
