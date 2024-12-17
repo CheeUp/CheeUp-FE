@@ -15,8 +15,8 @@ const Sidebar: React.FC<PSidebar> = ({ sections }) => {
 
   return (
     <div className='w-64 rounded-lg bg-white p-4'>
-      {sections.map((section, index) => (
-        <div key={index} className='mb-4'>
+      {sections.map((section) => (
+        <div key={section.title} className='mb-4'>
           <h3 className='mb-2 px-3 text-body2 font-semibold text-primary'>{section.title}</h3>
           {section.items.map((item) => (
             <SidebarItem key={item} label={item} isActive={activeItem === item} onClick={() => setActiveItem(item)} />
