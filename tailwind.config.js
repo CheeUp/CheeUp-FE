@@ -15,6 +15,15 @@ export default {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
         },
+        complementary: {
+          darksalmon: 'var(--darksalmon)',
+          boogerbuster: 'var(--boogerbuster)',
+          mediumpurple: 'var(--mediumpurple)',
+          skyblue: 'var(--skyblue)',
+          lightcrimson: 'var(--lightcrimson)',
+          lightgreen: 'var(--lightgreen)',
+          aquamarine: 'var(--aquamarine)',
+        },
         'table-header': 'var(--table-header)',
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
