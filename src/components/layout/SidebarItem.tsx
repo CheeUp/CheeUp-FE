@@ -1,23 +1,16 @@
-import React from "react";
+import React from 'react';
 
-interface SidebarItemProps {
+interface PSidebarItem {
   label: string;
   isActive: boolean;
   onClick: () => void;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
-  label,
-  isActive,
-  onClick,
-}) => {
+const SidebarItem: React.FC<PSidebarItem> = ({ label, isActive, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className={`
-      group py-2 px-3 rounded-md cursor-pointer transition-all text-body2 
-      ${isActive ? "bg-primary text-white font-semibold" : "hover:bg-primary-light hover:text-white"}
-    `}
+      className={`group cursor-pointer rounded-md px-3 py-2 text-body2 transition-all ${isActive ? 'bg-primary font-semibold text-white' : 'hover:bg-primary-light hover:text-white'} `}
     >
       <span>{label}</span>
     </div>
