@@ -5,7 +5,7 @@ interface PHeading extends PropsWithChildren {
 }
 
 export function H1({ children, className = '' }: PHeading) {
-  return <h1 className={'mt-9 mb-6 text-heading1 font-bold ' + className}>{children}</h1>;
+  return <h1 className={'text-heading1 font-bold ' + className}>{children}</h1>;
 }
 
 export function H2({ children, className = '' }: PHeading) {
