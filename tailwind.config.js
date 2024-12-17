@@ -15,6 +15,9 @@ export default {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
         },
+        action: {
+          DEFAULT: 'var(--warning)',
+        },
         'table-header': 'var(--table-header)',
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
