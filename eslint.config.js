@@ -1,9 +1,9 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import path from 'path';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import reactPlugin from 'eslint-plugin-react';
-import importPlugin from 'eslint-plugin-import';
-import parser from '@typescript-eslint/parser';
+import { FlatCompat } from "@eslint/eslintrc";
+import path from "path";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import reactPlugin from "eslint-plugin-react";
+import importPlugin from "eslint-plugin-import";
+import parser from "@typescript-eslint/parser";
 
 const compat = new FlatCompat({
   baseDirectory: path.resolve(),
@@ -11,10 +11,10 @@ const compat = new FlatCompat({
 
 export default [
   {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    files: ["src/**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
+      ecmaVersion: "latest",
+      sourceType: "module",
       parser: parser,
       parserOptions: {
         ecmaFeatures: {
@@ -23,42 +23,48 @@ export default [
       },
     },
     plugins: {
-      '@typescript-eslint': tsPlugin,
+      "@typescript-eslint": tsPlugin,
       react: reactPlugin,
       import: importPlugin,
     },
     rules: {
-      'import/extensions': [
-        'error',
-        'never',
+      "import/extensions": [
+        "error",
+        "never",
         {
-          js: 'never',
-          jsx: 'never',
-          ts: 'never',
-          tsx: 'never',
+          js: "never",
+          jsx: "never",
+          ts: "never",
+          tsx: "never",
         },
       ],
-      'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
-      'react/function-component-definition': [2, { namedComponents: ['arrow-function', 'function-declaration'] }],
-      'no-var': 'error',
-      'no-multiple-empty-lines': 'error',
-      'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+      "react/jsx-filename-extension": [
+        "error",
+        { extensions: [".jsx", ".tsx"] },
+      ],
+      "react/function-component-definition": [
+        2,
+        { namedComponents: ["arrow-function", "function-declaration"] },
+      ],
+      "no-var": "error",
+      "no-multiple-empty-lines": "error",
+      "no-console": ["error", { allow: ["warn", "error", "info"] }],
     },
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
-      'import/resolver': {
+      "import/resolver": {
         typescript: {
-          project: './tsconfig.json',
+          project: "./tsconfig.json",
         },
         node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       },
     },
   },
   {
-    ignores: ['**/*.css', '**/*.svg'], // CSS와 SVG 파일 무시
+    ignores: ["**/*.css", "**/*.svg"], // CSS와 SVG 파일 무시
   },
 ];
