@@ -145,7 +145,11 @@ async function handleRequest(event, requestId) {
             headers: Object.fromEntries(responseClone.headers.entries()),
           },
         },
+<<<<<<< HEAD
         [responseClone.body]
+=======
+        [responseClone.body],
+>>>>>>> cc96827 (💄 style: prettier 스타일 적용)
       );
     })();
   }
@@ -250,7 +254,7 @@ async function getResponse(event, client, requestId) {
         keepalive: request.keepalive,
       },
     },
-    [requestBuffer]
+    [requestBuffer],
   );
 
   switch (clientMessage.type) {
