@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 interface PTextArea {
   value: string;
@@ -22,7 +22,7 @@ export default function TextArea({ value, onChange, placeholder = '', className 
   return (
     <textarea
       className={
-        'w-full text-body2 px-4 py-2.5 border border-input rounded-sm overflow-hidden resize-none focus:outline-none placeholder:text-disabled ' +
+        'w-full resize-none overflow-hidden rounded-sm border border-input px-4 py-2.5 text-body2 placeholder:text-disabled focus:outline-activate ' +
         className
       }
       ref={textareaRef}
