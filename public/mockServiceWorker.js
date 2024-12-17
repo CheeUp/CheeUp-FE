@@ -1,4 +1,3 @@
-/* eslint-disable */
 /* tslint:disable */
 
 /**
@@ -145,11 +144,7 @@ async function handleRequest(event, requestId) {
             headers: Object.fromEntries(responseClone.headers.entries()),
           },
         },
-<<<<<<< HEAD
-        [responseClone.body]
-=======
         [responseClone.body],
->>>>>>> cc96827 (💄 style: prettier 스타일 적용)
       );
     })();
   }
