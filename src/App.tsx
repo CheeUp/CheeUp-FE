@@ -1,10 +1,12 @@
-import { H1 } from './components/ui/typography/Heading';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='text-heading1'>
-      <H1>안녕하세요!</H1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<h1>Home</h1>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
