@@ -22,7 +22,7 @@ const TextArea: React.FC<PTextArea> = ({ value, onChange, placeholder = '', clas
   return (
     <textarea
       className={
-        'border-input text-body2 placeholder:text-disabled focus:outline-activate w-full resize-none overflow-hidden rounded-sm border px-4 py-2.5 ' +
+        'w-full resize-none overflow-hidden rounded-sm border border-input px-4 py-2.5 text-body2 placeholder:text-disabled focus:outline-activate ' +
         className
       }
       ref={textareaRef}

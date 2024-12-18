@@ -9,7 +9,7 @@ const TextInput: React.FC<PTextInput> = ({ value, onChange, placeholder = '', cl
   return (
     <input
       className={
-        'border-input text-body2 placeholder:text-disabled focus:outline-activate rounded-sm border px-4 py-2.5 ' +
+        'rounded-sm border border-input px-4 py-2.5 text-body2 placeholder:text-disabled focus:outline-activate ' +
         className
       }
       value={value}
