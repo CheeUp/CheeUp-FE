@@ -1,12 +1,20 @@
 interface PAvatar {
-  imgUrl?: string;
-  size?: number;
+  src?: string;
+  size?: 'sm' | 'md' | 'lg';
 }
 
-export default function Avatar({ imgUrl = '/temp.jpg', size = 120 }: PAvatar) {
+export const Avatar = ({ src = '/temp.jpg', size = 'lg' }: PAvatar) => {
+  const sizeValue = avatarSize[size];
+
   return (
-    <div className="rounded-full overflow-hidden" style={{ width: `${size}px`, height: `${size}px` }}>
-      <img src={imgUrl} alt="avatar" className="w-full h-full object-cover" />
+    <div className='overflow-hidden rounded-full' style={{ width: sizeValue, height: sizeValue }}>
+      <img src={src} alt='avatar' className='h-full w-full object-cover' />
     </div>
   );
-}
+};
+
+const avatarSize = {
+  sm: '2rem',
+  md: '4rem',
+  lg: '7rem',
+};

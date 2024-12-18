@@ -23,6 +23,8 @@ export default {
           lightcrimson: 'var(--lightcrimson)',
           lightgreen: 'var(--lightgreen)',
           aquamarine: 'var(--aquamarine)',
+        action: {
+          DEFAULT: 'var(--warning)',
         },
         'table-header': 'var(--table-header)',
         destructive: {
