@@ -48,45 +48,45 @@ export default {
             foreground: 'hsl(var(--card-foreground))',
           },
         },
-        textColor: {
-          black: 'var(--text-black)',
-          white: 'var(--text-white)',
-          deepgray: 'var(--text-deepgray)',
-          disabled: 'var(--text-disabled)',
-        },
-        fontSize: {
-          heading1: 'var(--text-heading1)',
-          heading2: 'var(--text-heading2)',
-          heading3: 'var(--text-heading3)',
-          heading4: 'var(--text-heading4)',
-          body1: 'var(--text-body1)',
-          body2: 'var(--text-body2)',
-          detail: 'var(--text-detail)',
-        },
-        borderColor: {
-          border: 'var(--border)',
-          input: 'var(--border-input)',
-          activate: 'var(--border-activate)',
-        },
-        borderRadius: {
-          lg: `var(--radius)`,
-          md: `calc(var(--radius) - 4px)`,
-          sm: 'calc(var(--radius) - 8px)',
-        },
-        outlineColor: {
-          activate: 'var(--border-activate)',
-        },
-        backgroundColor: {
-          background: 'var(--background)',
-          modal: 'var(--modal-background)',
-        },
-        width: {
-          base: 'var(--width-base)',
-        },
       },
-      fontFamily: {
-        Pretendard: ['Pretendard'],
+      textColor: {
+        black: 'var(--text-black)',
+        white: 'var(--text-white)',
+        deepgray: 'var(--text-deepgray)',
+        disabled: 'var(--text-disabled)',
       },
+      fontSize: {
+        heading1: 'var(--text-heading1)',
+        heading2: 'var(--text-heading2)',
+        heading3: 'var(--text-heading3)',
+        heading4: 'var(--text-heading4)',
+        body1: 'var(--text-body1)',
+        body2: 'var(--text-body2)',
+        detail: 'var(--text-detail)',
+      },
+      borderColor: {
+        border: 'var(--border)',
+        input: 'var(--border-input)',
+        activate: 'var(--border-activate)',
+      },
+      borderRadius: {
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 4px)`,
+        sm: `calc(var(--radius) - 8px)`,
+      },
+      outlineColor: {
+        activate: 'var(--border-activate)',
+      },
+      backgroundColor: {
+        background: 'var(--background)',
+        modal: 'var(--modal-background)',
+      },
+      width: {
+        base: 'var(--width-base)',
+      },
+    },
+    fontFamily: {
+      Pretendard: ['Pretendard'],
     },
     plugins: [require('tailwindcss-animate')],
   },
