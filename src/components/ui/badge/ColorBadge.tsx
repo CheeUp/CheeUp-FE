@@ -2,7 +2,7 @@ interface PColorBadge {
   type: 'BE' | 'FE' | 'Embed' | 'Mobile' | 'Robot' | 'Design' | 'PM' | 'AI' | 'Cloud';
 }
 
-export const ColorBadge = ({ type }: PColorBadge) => {
+const ColorBadge: React.FC<PColorBadge> = ({ type }) => {
   const { text, bgColor } = badgeStyles[type];
 
   return (
@@ -25,3 +25,5 @@ const badgeStyles = {
   AI: { text: 'AI', bgColor: 'bg-complementary-boogerbuster' },
   Cloud: { text: 'Cloud', bgColor: 'bg-complementary-skyblue' },
 };
+
+export default ColorBadge;

@@ -7,7 +7,7 @@ interface PButton {
   className?: string;
 }
 
-export const Button = ({ children, type = 'filled', onClick, className = '' }: PButton) => {
+const Button: React.FC<PButton> = ({ children, type = 'filled', onClick, className = '' }) => {
   const { borderColor, bgColor, textColor } = buttonStyles[type];
 
   return (
@@ -27,3 +27,5 @@ const buttonStyles = {
   'delete-outlined': { borderColor: 'border-action', bgColor: 'bg-white', textColor: 'text-action' },
   'cancel-outlined': { borderColor: 'border-input', bgColor: 'bg-white', textColor: 'text-disabled' },
 };
+
+export default Button;

@@ -5,7 +5,7 @@ interface PTextInput {
   className?: string;
 }
 
-export default function TextInput({ value, onChange, placeholder = '', className = '' }: PTextInput) {
+const TextInput: React.FC<PTextInput> = ({ value, onChange, placeholder = '', className = '' }) => {
   return (
     <input
       className={
@@ -18,4 +18,6 @@ export default function TextInput({ value, onChange, placeholder = '', className
       placeholder={placeholder}
     />
   );
-}
+};
+
+export default TextInput;

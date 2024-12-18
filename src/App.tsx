@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -8,6 +8,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

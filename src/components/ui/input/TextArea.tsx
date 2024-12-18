@@ -7,7 +7,7 @@ interface PTextArea {
   className?: string;
 }
 
-export default function TextArea({ value, onChange, placeholder = '', className = '' }: PTextArea) {
+const TextArea: React.FC<PTextArea> = ({ value, onChange, placeholder = '', className = '' }) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -31,4 +31,6 @@ export default function TextArea({ value, onChange, placeholder = '', className 
       placeholder={placeholder}
     />
   );
-}
+};
+
+export default TextArea;
