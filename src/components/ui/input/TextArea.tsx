@@ -22,7 +22,7 @@ export default function TextArea({ value, onChange, placeholder = '', className 
   return (
     <textarea
       className={
-        'w-full resize-none overflow-hidden rounded-sm border border-input px-4 py-2.5 text-body2 placeholder:text-disabled focus:outline-activate ' +
+        'border-input text-body2 placeholder:text-disabled focus:outline-activate w-full resize-none overflow-hidden rounded-sm border px-4 py-2.5 ' +
         className
       }
       ref={textareaRef}

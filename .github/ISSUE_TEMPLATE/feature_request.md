@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: 필요한 기능을 추가해 주세요
-title: ''
-labels: ''
-assignees: ''
+title: ""
+labels: ""
+assignees: ""
 ---
 
 ## 📝 개요
