@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
+import Logo from '../Logo';
+import { Button } from '../ui/button/Button';
 import { Link, NavLink } from 'react-router-dom';
 const Navbar: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Navbar: React.FC = () => {
         <div className='flex items-center gap-[140px]'>
           {/* 로고 */}
           <Link to='/' className='flex items-center'>
-            <img src={logo} alt='Cheer Up Logo' className='h-8' />
+            <Logo className='h-8' />
           </Link>
           {/* 메뉴 */}
           <nav>
@@ -42,10 +43,16 @@ const Navbar: React.FC = () => {
             </ul>
           </nav>
         </div>
-        <div>{/* 여기에 로그인/회원가입 버튼/검색창 추가 */}</div>
+        <div className='flex gap-4'>
+        {/* 로그인/회원가입 */}
+          <Button  onClick={() => console.log('버튼 클릭')}>
+            로그인
+          </Button>
+        </div>
       </div>
     </header>
   );
 };
 
 export default Navbar;
+
