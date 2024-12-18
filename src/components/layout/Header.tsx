@@ -3,7 +3,7 @@ import logo from '../../assets/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 const Navbar: React.FC = () => {
   return (
-    <header className='bg-background p-4'>
+    <header className='bg-background p-6 shadow-md'>
       {/* 전체 */}
       <div className='flex items-center justify-between px-[90px]'>
         {/* 로고와 메뉴 */}
