@@ -1,4 +1,3 @@
-
 import { H1 } from './components/ui/typography/Heading';
 
 function App() {
@@ -7,6 +6,6 @@ function App() {
       <H1>안녕하세요!</H1>
     </div>
   );
-};
+}
 
 export default App;
