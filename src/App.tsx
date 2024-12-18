@@ -1,7 +1,9 @@
+import { H1 } from './components/ui/typography/Heading';
+
 function App() {
   return (
     <div className='text-heading1'>
-      <div>안녕하세요!</div>
+      <H1>안녕하세요!</H1>
     </div>
   );
 }

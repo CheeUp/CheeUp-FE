@@ -15,6 +15,9 @@ export default {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
         },
+        action: {
+          DEFAULT: 'var(--warning)',
+        },
         'table-header': 'var(--table-header)',
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -61,6 +64,9 @@ export default {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 4px)`,
         sm: 'calc(var(--radius) - 8px)',
+      },
+      outlineColor: {
+        activate: 'var(--border-activate)'
       },
       backgroundColor: {
         background: 'var(--background)',
