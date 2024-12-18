@@ -1,5 +1,5 @@
 interface PColorBadge {
-  type: 'BE' | 'FE' | 'Embed' | 'Mobile' | 'Robot' | 'Design' | 'PM' | 'AI';
+  type: 'BE' | 'FE' | 'Embed' | 'Mobile' | 'Robot' | 'Design' | 'PM' | 'AI' | 'Cloud';
 }
 
 export const ColorBadge = ({ type }: PColorBadge) => {
@@ -19,8 +19,9 @@ const badgeStyles = {
   FE: { text: 'FE', bgColor: 'bg-secondary' },
   Embed: { text: 'Embed', bgColor: 'bg-complementary-mediumpurple' },
   Mobile: { text: 'Mobile', bgColor: 'bg-complementary-darksalmon' },
-  Robot: { text: 'Robot', bgColor: 'bg-complementary-skyblue' },
+  Robot: { text: 'Robot', bgColor: 'bg-complementary-aquamarine' },
   Design: { text: 'Design', bgColor: 'bg-complementary-lightcrimson' },
   PM: { text: 'PM', bgColor: 'bg-complementary-lightgreen' },
   AI: { text: 'AI', bgColor: 'bg-complementary-boogerbuster' },
+  Cloud: { text: 'Cloud', bgColor: 'bg-complementary-skyblue' },
 };
