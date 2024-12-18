@@ -62,6 +62,9 @@ export default {
         md: `calc(var(--radius) - 4px)`,
         sm: "calc(var(--radius) - 8px)",
       },
+      outlineColor: {
+        activate: 'var(--border-activate)'
+      },
       backgroundColor: {
         background: "var(--background)",
         modal: "var(--modal-background)",
