@@ -9,7 +9,7 @@ export default function TextInput({ value, onChange, placeholder = '', className
   return (
     <input
       className={
-        'rounded-sm border border-input px-4 py-2.5 text-body2 placeholder:text-disabled focus:outline-activate ' +
+        'border-input text-body2 placeholder:text-disabled focus:outline-activate rounded-sm border px-4 py-2.5 ' +
         className
       }
       value={value}

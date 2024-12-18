@@ -12,7 +12,7 @@ export const Button = ({ children, type = 'filled', onClick, className = '' }: P
 
   return (
     <button
-      className={`cursor-pointer rounded-sm border px-4 py-2 text-body2 ${borderColor} ${bgColor} ${textColor} ${className} hover:opacity-90`}
+      className={`text-body2 cursor-pointer rounded-sm border px-4 py-2 ${borderColor} ${bgColor} ${textColor} ${className} hover:opacity-90`}
       onClick={onClick}
     >
       {children}

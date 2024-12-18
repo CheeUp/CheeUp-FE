@@ -1,19 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        ring: "hsl(var(--ring))",
-        background: "var(--background)",
+        ring: 'hsl(var(--ring))',
+        background: 'var(--background)',
         primary: {
-          DEFAULT: "var(--primary)",
-          light: "var(--primary-light)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: 'var(--primary)',
+          light: 'var(--primary-light)',
+          foreground: 'var(--primary-foreground)',
         },
         secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
         },
         complementary: {
           darksalmon: 'var(--darksalmon)',
@@ -90,5 +90,4 @@ export default {
     },
     plugins: [require('tailwindcss-animate')],
   },
-
 };

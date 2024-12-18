@@ -7,7 +7,7 @@ export const ColorBadge = ({ type }: PColorBadge) => {
 
   return (
     <div
-      className={`flex h-[1.5rem] w-[3.5rem] items-center justify-center rounded-full text-detail font-semibold text-white ${bgColor} select-none`}
+      className={`text-detail flex h-[1.5rem] w-[3.5rem] items-center justify-center rounded-full font-semibold text-white ${bgColor} select-none`}
     >
       {text}
     </div>
