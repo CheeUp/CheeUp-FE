@@ -11,7 +11,7 @@ const navItems = [
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
-  const onLoginClick = () => {
+  const handleLoginClick = () => {
     navigate('/login');
   }
 
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
         </div>
         {/* 로그인/회원가입 */}
         <div className='flex gap-4'>
-          <Button onClick={onLoginClick}>로그인</Button>
+          <Button onClick={handleLoginClick}>로그인</Button>
         </div>
       </div>
     </header>
