@@ -15,7 +15,7 @@ interface PPortfolioCard {
 
 export const PortfolioCard: React.FC<PPortfolioCard> = ({ portfolioInfo }) => {
   return (
-    <div className='border-borderhover:opacity-90 mx-4 my-4 flex w-52 cursor-pointer flex-col gap-2 rounded-md border bg-white px-3 py-3'>
+    <div className='border-borderhover:opacity-90 flex w-52 cursor-pointer flex-col gap-2 rounded-md border bg-white px-3 py-3'>
       <div className='flex items-center justify-between'>
         <ColorBadge type={portfolioInfo.job} />
         <div className='text-detail'>
