@@ -1,13 +1,5 @@
-import { Job } from '@/model/job';
+import { PortfolioInfo } from '@/model';
 import ColorBadge from './badge/ColorBadge';
-
-export interface PortfolioInfo {
-  title: string;
-  author: string;
-  job: Job;
-  likes: number;
-  createdAt: string;
-}
 
 interface PPortfolioCard {
   portfolioInfo: PortfolioInfo;
