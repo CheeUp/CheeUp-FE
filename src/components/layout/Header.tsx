@@ -16,8 +16,14 @@ const Navbar: React.FC = () => {
   }
 
   return (
+<<<<<<< HEAD
     <header className='bg-background p-6'>
       <div className='flex items-center justify-between px-[90px]'>
+=======
+    <header className='sticky top-0 z-50 border-b border-border bg-white px-14 py-3'>
+      {/* 전체 */}
+      <div className='flex items-center justify-between'>
+>>>>>>> 31bd2c832104ef9c97b0d7ab280497cb9e4fdd44
         {/* 로고와 메뉴 */}
         <div className='flex items-center gap-[140px]'>
           {/* 로고 */}
