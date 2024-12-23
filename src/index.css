@@ -19,6 +19,8 @@
     --border-input: #bdbdbd;
     --border-activate: #222222;
     --table-header: #eeeeee;
+    --calendar-header: rgba(0, 0, 0, 0.06);
+    --calendar-border: #b9b9b9;
     --modal-background: rgba(0, 0, 0, 0.3);
     --warning: #ef2a2b;
     --darksalmon: #f49370;

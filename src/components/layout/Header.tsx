@@ -1,6 +1,6 @@
+import Logo from '@/components/Logo';
+import Button from '@/components/ui/button/Button';
 import React from 'react';
-import Logo from '../Logo';
-import Button from '../ui/button/Button';
 import { Link, NavLink } from 'react-router-dom';
 const Header: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
             <ul className='flex gap-16 text-black'>
               <li>
                 <NavLink
-                  to='/jobs'
+                  to='/recruit'
                   className={({ isActive }) => (isActive ? 'text-primary' : 'text-black hover:text-primary-light')}
                 >
                   채용공고

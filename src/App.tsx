@@ -1,5 +1,6 @@
+import Header from '@/components/layout/Header';
+import RecruitPage from '@/components/pages/recruit/RecruitPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './components/layout/Header';
 
 const App: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path='/' element={<h1>Home</h1>} />
+        <Route path='/recruit' element={<RecruitPage />} />
       </Routes>
     </BrowserRouter>
   );
