@@ -1,6 +1,6 @@
-import { PortfolioInfo } from '@/model';
+import { TPortfolioInfo } from '@/model';
 
-const portfolioInfo: PortfolioInfo = {
+const portfolioInfo: TPortfolioInfo = {
   title: '프론트 포트폴리오',
   author: '서로',
   job: 'FE',
