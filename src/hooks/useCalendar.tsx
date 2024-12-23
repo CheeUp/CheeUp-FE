@@ -10,13 +10,19 @@ const useCalendar = () => {
 
   const totalMonthDays = getDaysInMonth(currentDate);
 
-  const prevDayList = Array.from({
-    length: Math.max(0, currentDate.getDay() - 1),
-  }).map(() => DEFAULT_TRASH_VALUE);
-  const currentDayList = Array.from({ length: totalMonthDays }).map((_, i) => i + 1);
-  const nextDayList = Array.from({
-    length: CALENDER_LENGTH - currentDayList.length - prevDayList.length,
-  }).map(() => DEFAULT_TRASH_VALUE);
+  const prevDayList = Array.from(
+    {
+      length: Math.max(0, currentDate.getDay() - 1),
+    },
+    () => DEFAULT_TRASH_VALUE,
+  );
+  const currentDayList = Array.from({ length: totalMonthDays }, (_, i) => i + 1);
+  const nextDayList = Array.from(
+    {
+      length: CALENDER_LENGTH - currentDayList.length - prevDayList.length,
+    },
+    () => DEFAULT_TRASH_VALUE,
+  );
 
   const currentCalendarList = prevDayList.concat(currentDayList, nextDayList);
   const weekCalendarList = currentCalendarList.reduce((acc: number[][], cur, idx) => {
@@ -29,7 +35,7 @@ const useCalendar = () => {
   }, []);
   if (weekCalendarList.length === 6) {
     weekCalendarList[5] = weekCalendarList[5].concat(
-      Array.from({ length: DAY_OF_WEEK - weekCalendarList[5].length }).map(() => DEFAULT_TRASH_VALUE),
+      Array.from({ length: DAY_OF_WEEK - weekCalendarList[5].length }, () => DEFAULT_TRASH_VALUE),
     );
   }
 
