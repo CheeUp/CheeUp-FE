@@ -52,6 +52,10 @@ export default {
           header: 'var(--calendar-header)',
           border: 'var(--calendar-border)',
         },
+        stepper: {
+          DEFAULT: 'var(--stepper-inactive)',
+          active: 'var(--primary)',
+        },
       },
       textColor: {
         black: 'var(--text-black)',
