@@ -1,4 +1,4 @@
-import { H1 } from './Heading';
+import { H1 } from '@/components/ui/typography/Heading';
 
 interface PPageTitle {
   children: React.ReactNode;
