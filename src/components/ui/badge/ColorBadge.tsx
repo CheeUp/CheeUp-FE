@@ -1,7 +1,7 @@
-import { Job } from '@/model/job';
+import { TJob } from '@/model/job';
 
 interface PColorBadge {
-  type: Job;
+  type: TJob;
 }
 
 const ColorBadge: React.FC<PColorBadge> = ({ type }) => {
