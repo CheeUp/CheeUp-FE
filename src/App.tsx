@@ -1,5 +1,5 @@
 import Header from '@/components/layout/Header';
-import RecruitPage from '@/components/pages/recruit/RecruitPage';
+import RecruitPage from '@/components/pages/recruit';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App: React.FC = () => {
