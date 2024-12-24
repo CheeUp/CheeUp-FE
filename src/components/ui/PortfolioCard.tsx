@@ -1,8 +1,8 @@
-import { PortfolioInfo } from '@/model';
+import { TPortfolioInfo } from '@/model';
 import ColorBadge from './badge/ColorBadge';
 
 interface PPortfolioCard {
-  portfolioInfo: PortfolioInfo;
+  portfolioInfo: TPortfolioInfo;
 }
 
 export const PortfolioCard: React.FC<PPortfolioCard> = ({ portfolioInfo }) => {
