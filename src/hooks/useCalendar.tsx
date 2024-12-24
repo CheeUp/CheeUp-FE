@@ -1,4 +1,4 @@
-import { getDaysInMonth } from 'date-fns';
+import { getDaysInMonth, addDays } from 'date-fns';
 import { useState } from 'react';
 
 const CALENDER_LENGTH = 35;
@@ -7,12 +7,11 @@ const DAY_OF_WEEK = 7;
 
 const useCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-
   const totalMonthDays = getDaysInMonth(currentDate);
 
   const prevDayList = Array.from(
     {
-      length: Math.max(0, currentDate.getDay() - 1),
+      length: Math.max(0, addDays(currentDate, -1 * (currentDate.getDate() - 1)).getDay()),
     },
     () => DEFAULT_TRASH_VALUE,
   );
