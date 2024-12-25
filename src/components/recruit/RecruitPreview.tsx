@@ -21,7 +21,7 @@ const RecruitPreview: React.FC<PRecruitPreview> = ({ id, isStart, company, isScr
       className={`flex items-center justify-between gap-1 rounded-[0.3rem] pl-2 pr-1 ${isHovered ? 'bg-black/5' : ''}`}
     >
       <RecruitStateBadge isStart={isStart} />
-      <p className='grow'>{company}</p>
+      <p className='line-clamp-1 grow'>{company}</p>
       <button onClick={handleBookmark}>
         <BookmarkIcon filled={isScraped} />
       </button>
