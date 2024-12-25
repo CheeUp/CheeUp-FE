@@ -1,4 +1,4 @@
-import { TPortfolioInfo } from '@/model';
+import { TPortfolioInfo } from '@/model/portfolio';
 import ColorBadge from './badge/ColorBadge';
 
 interface PPortfolioCard {

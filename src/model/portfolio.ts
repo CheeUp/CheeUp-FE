@@ -7,3 +7,9 @@ export interface TPortfolioInfo {
   likes: number;
   createdAt: string;
 }
+
+export interface TPortfolioStepItem {
+  id: number;
+  title: string;
+  content: string;
+}

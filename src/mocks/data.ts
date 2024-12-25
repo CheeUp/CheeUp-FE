@@ -1,4 +1,4 @@
-import { TPortfolioInfo } from '@/model';
+import { TPortfolioInfo } from '@/model/portfolio';
 
 const portfolioInfo: TPortfolioInfo = {
   title: '프론트 포트폴리오',
