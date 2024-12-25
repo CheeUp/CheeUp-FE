@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PortfolioStepList } from '@/lib';
+import { PortfolioStepList } from '@/lib/portfolio/portfolio';
 
 const useStepper = (initialStep: number = 1) => {
   const [currentStep, setCurrentStep] = useState<number>(initialStep);

@@ -1,4 +1,4 @@
-import { TPortfolioStepItem } from '@/model';
+import { TPortfolioStepItem } from '@/model/portfolio/portfolio';
 
 export const PortfolioStepList: TPortfolioStepItem[] = [
   {

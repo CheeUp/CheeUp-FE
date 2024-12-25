@@ -1,4 +1,4 @@
-import { TPortfolioStepItem } from '@/model';
+import { TPortfolioStepItem } from '@/model/portfolio/portfolio';
 import { StepLine } from '@/components/ui/stepper/StepLine';
 import { StepNode } from '@/components/ui/stepper/StepNode';
 
