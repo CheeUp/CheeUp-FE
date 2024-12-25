@@ -1,4 +1,4 @@
-import { TPortfolioStepItem } from '@/model/portfolio/portfolio';
+import { TPortfolioStepItem } from '@/model/portfolio';
 
 interface PStepperText {
   stepList: TPortfolioStepItem[];
