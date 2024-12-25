@@ -40,9 +40,7 @@ const Calendar: React.FC<PCalendar> = ({ weekCalendarList }) => {
                       >
                         <RecruitPreview
                           isStart={event.startDate.getDate() === day}
-                          isHovered={
-                            hoveredPreview?.startDate === event.startDate || hoveredPreview?.endDate === event.endDate
-                          }
+                          isHovered={hoveredPreview?.id === event.id}
                           {...event}
                         />
                       </div>
