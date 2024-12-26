@@ -1,8 +1,14 @@
+import RecruitPreview from '@/components/recruit/RecruitPreview';
+import { TRecruitCalendar, TRecruitPreview } from '@/model/recruit';
+import { useState } from 'react';
+
 interface PCalendar {
-  weekCalendarList: number[][];
+  weekCalendarList: TRecruitCalendar[][];
 }
 
 const Calendar: React.FC<PCalendar> = ({ weekCalendarList }) => {
+  const [hoveredPreview, setHoveredPreview] = useState<TRecruitPreview | null>(null);
+
   return (
     <table className='w-full'>
       <thead className='border border-calender-border'>
@@ -16,15 +22,30 @@ const Calendar: React.FC<PCalendar> = ({ weekCalendarList }) => {
           <th>SAT</th>
         </tr>
       </thead>
-      <tbody className='divide-y divide-calender-border border border-calender-border'>
+      <tbody className='divide-y divide-calender-border border border-calender-border bg-white'>
         {weekCalendarList.map((week, rIdx) => (
           <tr key={rIdx} className='grid min-h-48 grid-cols-7 divide-x divide-calender-border'>
-            {week.map((day, cIdx) =>
+            {week.map(({ day, events }, cIdx) =>
               day === 0 ? (
                 <td key={cIdx}></td>
               ) : (
-                <td key={cIdx} className='px-3 pb-16'>
-                  <div className='py-2.5 text-right text-body2 font-bold'>{day}</div>
+                <td key={cIdx} className='pb-16'>
+                  <div className='px-3 py-2.5 text-right text-body2 font-bold'>{day}</div>
+                  <section className='px-1'>
+                    {events.map((event) => (
+                      <div
+                        key={event.id}
+                        onMouseEnter={() => setHoveredPreview(event)}
+                        onMouseLeave={() => setHoveredPreview(null)}
+                      >
+                        <RecruitPreview
+                          isStart={event.startDate.getDate() === day}
+                          isHovered={hoveredPreview?.id === event.id}
+                          {...event}
+                        />
+                      </div>
+                    ))}
+                  </section>
                 </td>
               ),
             )}
