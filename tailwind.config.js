@@ -48,6 +48,14 @@ export default {
             foreground: 'hsl(var(--card-foreground))',
           },
         },
+        calender: {
+          header: 'var(--calendar-header)',
+          border: 'var(--calendar-border)',
+        },
+        stepper: {
+          DEFAULT: 'var(--stepper-inactive)',
+          active: 'var(--primary)',
+        },
       },
       textColor: {
         black: 'var(--text-black)',

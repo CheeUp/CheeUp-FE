@@ -1,5 +1,7 @@
+import { TJob } from '@/model/job';
+
 interface PColorBadge {
-  type: 'BE' | 'FE' | 'Embed' | 'Mobile' | 'Robot' | 'Design' | 'PM' | 'AI' | 'Cloud';
+  type: TJob;
 }
 
 const ColorBadge: React.FC<PColorBadge> = ({ type }) => {
