@@ -1,9 +1,9 @@
 import DropdownList from '@/components/ui/dropdown/DropdownList';
 import DropdownIcon from '@/components/ui/icons/DropdownIcon';
-import InputWithTitle from '@/components/ui/InputWithTitle';
+import LabeledContent from '@/components/ui/LabeledContent';
 
 interface PDropdown {
-  title: string;
+  label: string;
   placeholder: string;
   options: string[];
   selected: string[];
@@ -12,15 +12,15 @@ interface PDropdown {
   handleOpen: () => void;
 }
 
-const Dropdown: React.FC<PDropdown> = ({ title, placeholder, options, selected, setSelected, isOpen, handleOpen }) => {
+const Dropdown: React.FC<PDropdown> = ({ label, placeholder, options, selected, setSelected, isOpen, handleOpen }) => {
   return (
     <div className='relative h-10 w-full pl-5 pr-2'>
       <button className='flex h-full w-full items-center justify-between text-left' onClick={handleOpen}>
-        <InputWithTitle title={title} icon={<DropdownIcon />}>
+        <LabeledContent label={label} icon={<DropdownIcon />}>
           <span className={`${selected.length === 0 ? 'text-disabled' : 'text-black'} line-clamp-1 text-body1`}>
             {selected.length === 0 ? placeholder : selected.length === options.length ? '전체' : selected.join(', ')}
           </span>
-        </InputWithTitle>
+        </LabeledContent>
       </button>
       {isOpen && <DropdownList options={options} selected={selected} setSelected={setSelected} />}
     </div>

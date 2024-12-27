@@ -1,6 +1,6 @@
 import Dropdown from '@/components/ui/dropdown/Dropdown';
 import SearchIcon from '@/components/ui/icons/SearchIcon';
-import InputWithTitle from '@/components/ui/InputWithTitle';
+import LabeledContent from '@/components/ui/LabeledContent';
 import useClickOutsideRef from '@/hooks/useClickOutsideRef';
 import { businessScaleList, jobList, recruitTypeList } from '@/lib/recruit';
 import { useRecruitFilterStore } from '@/store/recruitFilter';
@@ -33,7 +33,7 @@ const RecruitFilter: React.FC = () => {
       <div ref={dropdownRef} className='flex w-3/5 items-center divide-x-2 divide-border'>
         <div className='w-1/3'>
           <Dropdown
-            title='기업 규모'
+            label='기업 규모'
             placeholder='기업 규모 선택'
             options={businessScaleList}
             selected={businessScaleList.filter((item) => selectedBusinessScale.includes(item))}
@@ -46,7 +46,7 @@ const RecruitFilter: React.FC = () => {
         </div>
         <div className='w-1/2'>
           <Dropdown
-            title='직무'
+            label='직무'
             placeholder='직무 선택'
             options={jobList}
             selected={jobList.filter((item) => selectedJob.includes(item))}
@@ -57,7 +57,7 @@ const RecruitFilter: React.FC = () => {
         </div>
         <div className='w-1/6'>
           <Dropdown
-            title='채용 형태'
+            label='채용 형태'
             placeholder='채용 형태 선택'
             options={recruitTypeList}
             selected={recruitTypeList.filter((item) => selectedRecruitType.includes(item))}
@@ -68,8 +68,8 @@ const RecruitFilter: React.FC = () => {
         </div>
       </div>
       <form className='flex flex-grow items-center justify-between px-5' onSubmit={search}>
-        <InputWithTitle
-          title='공고 검색'
+        <LabeledContent
+          label='공고 검색'
           icon={
             <button type='submit'>
               <SearchIcon />
@@ -83,7 +83,7 @@ const RecruitFilter: React.FC = () => {
             placeholder='공고명이나 기업명을 검색하세요.'
             className='w-full border-none px-0 py-0 text-body1 placeholder:text-disabled focus:outline-none'
           />
-        </InputWithTitle>
+        </LabeledContent>
       </form>
     </div>
   );
