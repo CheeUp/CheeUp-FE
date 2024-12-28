@@ -4,11 +4,12 @@ interface PRadioButtonGroup {
   options: string[];
   selected: string;
   onSelect: (value: string) => void;
+  id?: string;
 }
 
-const RadioButtonGroup: React.FC<PRadioButtonGroup> = ({ options, selected, onSelect }) => {
+const RadioButtonGroup: React.FC<PRadioButtonGroup> = ({ options, selected, onSelect, id }) => {
   return (
-    <div className='flex flex-wrap gap-2'>
+    <div id={id} className='flex flex-wrap gap-2'>
       {options.map((option, index) => (
         <Button
           key={index}
