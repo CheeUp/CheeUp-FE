@@ -7,7 +7,7 @@ interface PPortfolioStepper {
   stepList: TStepItem[];
 }
 
-export const PortfolioStepper: React.FC<PPortfolioStepper> = ({ currentStep, stepList }) => {
+export const StepperWithText: React.FC<PPortfolioStepper> = ({ currentStep, stepList }) => {
   return (
     <div className='flex'>
       <Stepper currentStep={currentStep} stepList={stepList} />

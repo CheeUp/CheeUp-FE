@@ -1,7 +1,7 @@
 import React from 'react';
 import PageTitle from '@/components/ui/typography/PageTitle';
 import TextInput from '@/components/ui/input/TextInput';
-import { PortfolioCard } from '@/components/ui/PortfolioCard';
+import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
 import PortfolioSideBar from '@/components/layout/portfolio/PortfolioSideBar';
 import useTextInput from '@/hooks/useTextInput';
 import { MportfolioData } from '@/mocks/data/portfolio';

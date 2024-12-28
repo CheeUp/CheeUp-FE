@@ -1,5 +1,5 @@
 import Button from '@/components/ui/button/Button';
-import { PortfolioCard } from '@/components/ui/PortfolioCard';
+import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
 import { MportfolioData } from '@/mocks/data/portfolio';
 import { useNavigate } from 'react-router-dom';
 

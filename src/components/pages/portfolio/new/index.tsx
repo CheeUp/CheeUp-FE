@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/button/Button';
 import { H1 } from '@/components/ui/typography/Heading';
-import { PortfolioStepper } from '@/components/ui/stepper/PortfolioStepper';
-import BasicInfoForm from '@/components/pages/portfolio/new/forms/BasicInfoForm';
+import { StepperWithText } from '@/components/ui/stepper/StepperWithText';
+import BasicInfoForm from '@/components/portfolio/forms/BasicInfoForm';
 import useStepper from '@/hooks/useStepper';
 import { PortfolioStepList } from '@/lib/portfolio';
 
@@ -37,7 +37,7 @@ const NewPortfolioPage: React.FC = () => {
 
         <div className='flex divide-x divide-border'>
           <div className='w-1/4 py-6'>
-            <PortfolioStepper currentStep={currentStep} stepList={stepList} />
+            <StepperWithText currentStep={currentStep} stepList={stepList} />
           </div>
 
           <div className='w-3/4 py-6 pl-6'>
