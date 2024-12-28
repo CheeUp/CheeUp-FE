@@ -1,9 +1,9 @@
-import { TJob } from '@/model/job';
+import { TJobEng } from '@/model/job';
 
 export interface TPortfolioInfo {
   title: string;
   author: string;
-  job: TJob;
+  job: TJobEng;
   likes: number;
   createdAt: string;
 }
