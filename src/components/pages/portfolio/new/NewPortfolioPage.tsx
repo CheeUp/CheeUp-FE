@@ -1,20 +1,29 @@
-import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import Button from '@/components/ui/button/Button';
 import { H1 } from '@/components/ui/typography/Heading';
 import { PortfolioStepper } from '@/components/ui/stepper/PortfolioStepper';
 import BasicInfoForm from '@/components/pages/portfolio/new/forms/BasicInfoForm';
+import useStepper from '@/hooks/useStepper';
+import { PortfolioStepList } from '@/lib/portfolio';
 
 const NewPortfolioPage: React.FC = () => {
+  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const step = searchParams.get('step');
+  const step = Number(searchParams.get('step'));
+
+  useEffect(() => {
+    if (isNaN(step) || step <= 0 || step > PortfolioStepList.length) {
+      navigate('/portfolio/new?step=1');
+    }
+  }, [step, navigate]);
+
+  const { currentStep, stepList, goToNextStep } = useStepper(step, PortfolioStepList);
 
   const renderForm = () => {
     switch (step) {
-      case '1':
+      case 1:
         return <BasicInfoForm />;
-      default:
-        return <div>어떻게 나타낼지 고민</div>;
     }
   };
 
@@ -28,7 +37,7 @@ const NewPortfolioPage: React.FC = () => {
 
         <div className='flex divide-x divide-border'>
           <div className='w-1/4 py-6'>
-            <PortfolioStepper />
+            <PortfolioStepper currentStep={currentStep} stepList={stepList} />
           </div>
 
           <div className='w-3/4 py-6 pl-6'>

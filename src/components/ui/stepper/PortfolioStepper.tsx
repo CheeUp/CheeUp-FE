@@ -1,14 +1,17 @@
 import { StepperText } from '@/components/ui/stepper/StepperText';
 import { Stepper } from '@/components/ui/stepper/Stepper';
-import useStepper from '@/hooks/useStepper';
+import { TStepItem } from '@/model/portfolio';
 
-export const PortfolioStepper: React.FC = () => {
-  const { currentStep, PortfolioStepList } = useStepper(1);
+interface PPortfolioStepper {
+  currentStep: number;
+  stepList: TStepItem[];
+}
 
+export const PortfolioStepper: React.FC<PPortfolioStepper> = ({ currentStep, stepList }) => {
   return (
     <div className='flex'>
-      <Stepper currentStep={currentStep} stepList={PortfolioStepList} />
-      <StepperText stepList={PortfolioStepList} />
+      <Stepper currentStep={currentStep} stepList={stepList} />
+      <StepperText stepList={stepList} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import { TPortfolioStepItem } from '@/model/portfolio';
+import { TStepItem } from '@/model/portfolio';
 
-export const PortfolioStepList: TPortfolioStepItem[] = [
+export const PortfolioStepList: TStepItem[] = [
   {
     id: 1,
     title: '기본 정보',

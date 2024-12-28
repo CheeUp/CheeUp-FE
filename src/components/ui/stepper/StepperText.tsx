@@ -1,7 +1,7 @@
-import { TPortfolioStepItem } from '@/model/portfolio';
+import { TStepItem } from '@/model/portfolio';
 
 interface PStepperText {
-  stepList: TPortfolioStepItem[];
+  stepList: TStepItem[];
 }
 
 export const StepperText: React.FC<PStepperText> = ({ stepList }) => {
