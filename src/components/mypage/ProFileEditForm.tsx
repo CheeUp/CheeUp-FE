@@ -93,7 +93,7 @@ const ProfileEditForm: React.FC<ProfileEditFormProps> = ({ initialValues, onSubm
               onClick={() => setSelectedStacks((prev) => prev.filter((s) => s !== stack))}
             >
               {/* 기술 스택 이름 */}
-              <span className='transition-opacity group-hover:opacity-0'>{stack}</span>
+              <span className='transition-opacity text-white group-hover:opacity-0 '>{stack}</span>
 
               {/* 쓰레기통 부분 */}
               <div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100'>
