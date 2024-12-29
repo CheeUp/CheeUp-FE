@@ -17,31 +17,31 @@ interface ProfileViewProps {
 
 const ProfileView: React.FC<ProfileViewProps> = ({ user, onEdit }) => {
   return (
-    <div className="space-y-6 bg-white p-6 rounded-md shadow-md">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">{user.이름}의 마이페이지</h1>
+    <div className='space-y-6 rounded-md bg-white p-6 shadow-md'>
+      <h1 className='mb-4 text-2xl font-bold text-gray-800'>{user.이름}의 마이페이지</h1>
 
       {/* 기본 정보 */}
       {Object.keys(user)
         .filter((key) => !['기술스택', '희망직무'].includes(key))
         .map((key) => (
           <div key={key}>
-            <label className="block text-sm font-medium text-gray-700 mb-2">{key}</label>
+            <label className='mb-2 block text-sm font-medium text-gray-700'>{key}</label>
             <TextInput
               value={(user as any)[key]}
               onChange={() => {}} // 변경 불가능
-              placeholder=""
+              placeholder=''
               disabled // 비활성화 상태
-              className="w-full"
+              className='w-full'
             />
           </div>
         ))}
 
       {/* 기술 스택 */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">기술 스택</label>
-        <div className="flex flex-wrap gap-2">
+        <label className='mb-2 block text-sm font-medium text-gray-700'>기술 스택</label>
+        <div className='flex flex-wrap gap-2'>
           {user.기술스택.map((stack) => (
-            <Button key={stack} type="filled" onClick={() => {}} className="cursor-default">
+            <Button key={stack} type='filled' onClick={() => {}} className='cursor-default'>
               {stack}
             </Button>
           ))}
@@ -50,10 +50,10 @@ const ProfileView: React.FC<ProfileViewProps> = ({ user, onEdit }) => {
 
       {/* 희망 직무 */}
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">희망 직무</label>
-        <div className="flex flex-wrap gap-2">
+        <label className='mb-2 block text-sm font-medium text-gray-700'>희망 직무</label>
+        <div className='flex flex-wrap gap-2'>
           {user.희망직무.map((job) => (
-            <Button key={job} type="filled" onClick={() => {}} className="cursor-default">
+            <Button key={job} type='filled' onClick={() => {}} className='cursor-default'>
               {job}
             </Button>
           ))}
@@ -61,8 +61,8 @@ const ProfileView: React.FC<ProfileViewProps> = ({ user, onEdit }) => {
       </div>
 
       {/* 수정 버튼 */}
-      <div className="flex justify-end">
-        <Button type="filled" onClick={onEdit}>
+      <div className='flex justify-end'>
+        <Button type='filled' onClick={onEdit}>
           수정하기
         </Button>
       </div>

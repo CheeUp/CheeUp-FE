@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo';
-import  Button  from '../ui/button/Button';
-import { Link, NavLink,useNavigate } from 'react-router-dom';
+import Button from '../ui/button/Button';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const navItems = [
   { title: '채용공고', to: '/jobs' },
@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const handleLoginClick = () => {
     navigate('/login');
-  }
+  };
 
   return (
     <header className='sticky top-0 z-50 border-b border-border bg-white px-14 py-3'>
@@ -33,9 +33,7 @@ const Navbar: React.FC = () => {
                 <li key={item.to}>
                   <NavLink
                     to={item.to}
-                    className={({ isActive }) =>
-                      isActive ? 'text-primary' : 'text-black hover:text-primary-light'
-                    }
+                    className={({ isActive }) => (isActive ? 'text-primary' : 'text-black hover:text-primary-light')}
                   >
                     {item.title}
                   </NavLink>

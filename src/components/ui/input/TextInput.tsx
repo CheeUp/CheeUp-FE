@@ -7,7 +7,14 @@ interface PTextInput {
   disabled?: boolean;
 }
 
-const TextInput: React.FC<PTextInput> = ({ value, onChange, placeholder = '', className = '', id, disabled = false}) => {
+const TextInput: React.FC<PTextInput> = ({
+  value,
+  onChange,
+  placeholder = '',
+  className = '',
+  id,
+  disabled = false,
+}) => {
   return (
     <input
       className={
