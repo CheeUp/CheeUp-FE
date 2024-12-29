@@ -1,5 +1,5 @@
 import React from 'react';
-import FiSearch from '@/components/FiSearch'; // 새로 만든 FiSearch 컴포넌트를 import
+import FiSearch from '@/components/FiSearch';
 
 const SearchBar: React.FC<{
   value: string;
@@ -21,7 +21,7 @@ const SearchBar: React.FC<{
         onClick={onSearch}
         className='absolute right-2 flex items-center justify-center text-blue-400 hover:text-blue-600'
       >
-        <FiSearch /> {/* 새로 만든 FiSearch 컴포넌트를 사용 */}
+        <FiSearch />
       </button>
     </div>
   );
