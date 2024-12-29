@@ -124,7 +124,10 @@ const ProfileEditForm: React.FC<ProfileEditFormProps> = ({ initialValues, onSubm
             <Button
               key={job}
               type={selectedJobs.includes(job) ? 'filled' : 'outlined'}
-              onClick={() => toggleJobSelection(job)}
+              onClick={(e) => {
+                e.preventDefault(); // 기본 동작 방지
+                toggleJobSelection(job);
+              }}
             >
               {job}
             </Button>
