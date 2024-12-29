@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { PortfolioStepList } from '@/lib/portfolio';
+import { TStepItem } from '@/model/portfolio';
 
-const useStepper = (initialStep: number = 1) => {
+const useStepper = (initialStep: number = 1, stepList: TStepItem[]) => {
   const [currentStep, setCurrentStep] = useState<number>(initialStep);
 
-  const totalSteps = PortfolioStepList.length;
+  const totalSteps = stepList.length;
 
   const goToNextStep = () => {
     if (currentStep < totalSteps) {
@@ -25,7 +25,7 @@ const useStepper = (initialStep: number = 1) => {
 
   return {
     currentStep,
-    PortfolioStepList,
+    stepList,
     goToNextStep,
     goToPreviousStep,
     goToStep,

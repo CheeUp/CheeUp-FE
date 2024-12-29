@@ -1,5 +1,5 @@
 import { TPortfolioInfo } from '@/model/portfolio';
-import ColorBadge from './badge/ColorBadge';
+import ColorBadge from '@/components/ui/badge/ColorBadge';
 
 interface PPortfolioCard {
   portfolioInfo: TPortfolioInfo;

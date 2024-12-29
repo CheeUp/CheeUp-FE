@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTitle from '@/components/ui/typography/PageTitle';
 import TextInput from '@/components/ui/input/TextInput';
-import { PortfolioCard } from '@/components/ui/PortfolioCard';
+import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
 import PortfolioSideBar from '@/components/layout/portfolio/PortfolioSideBar';
 import useTextInput from '@/hooks/useTextInput';
-import { portfolioData } from '@/mocks/data';
+import { MportfolioData } from '@/mocks/data/portfolio';
 
 const PortfolioPage: React.FC = () => {
   const [searchText, setSearchText] = useTextInput('');
@@ -23,7 +23,7 @@ const PortfolioPage: React.FC = () => {
             </div>
 
             <div className='flex flex-wrap gap-4'>
-              {portfolioData.map((info, index) => (
+              {MportfolioData.map((info, index) => (
                 <PortfolioCard key={index} portfolioInfo={info} />
               ))}
             </div>
@@ -41,7 +41,7 @@ const PortfolioPage: React.FC = () => {
             </div>
 
             <div className='flex flex-wrap gap-4'>
-              {portfolioData.map((info, index) => (
+              {MportfolioData.map((info, index) => (
                 <PortfolioCard key={index} portfolioInfo={info} />
               ))}
             </div>
