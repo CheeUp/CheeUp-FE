@@ -3,6 +3,7 @@ import RecruitPage from '@/components/pages/recruit';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MyPage from '@/components/pages/mypage/Mypage';
 import PortfolioPage from '@/components/pages/portfolio';
+import NewPortfolioPage from '@/components/pages/portfolio/new';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
         <Route path='/mypage' element={<MyPage/>}/>
         <Route path='/recruit' element={<RecruitPage />} />
         <Route path='/portfolio' element={<PortfolioPage />} />
+        <Route path='/portfolio/new' element={<NewPortfolioPage />} />
       </Routes>
     </BrowserRouter>
   );

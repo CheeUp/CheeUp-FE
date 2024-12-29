@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 interface PButton {
   children: ReactNode;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  type?: 'filled' | 'outlined' | 'delete-filled' | 'delete-outlined' | 'cancel-outlined';
+  type?: 'filled' | 'outlined' | 'delete-filled' | 'delete-outlined' | 'disable-outlined';
   className?: string;
 }
 
@@ -25,7 +25,7 @@ const buttonStyles = {
   outlined: { borderColor: 'border-primary', bgColor: 'bg-white', textColor: 'text-primary' },
   'delete-filled': { borderColor: 'border-action', bgColor: 'bg-action', textColor: 'text-white' },
   'delete-outlined': { borderColor: 'border-action', bgColor: 'bg-white', textColor: 'text-action' },
-  'cancel-outlined': { borderColor: 'border-input', bgColor: 'bg-white', textColor: 'text-disabled' },
+  'disable-outlined': { borderColor: 'border-input', bgColor: 'bg-white', textColor: 'text-disabled' },
 };
 
 export default Button;
