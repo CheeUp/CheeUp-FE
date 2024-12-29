@@ -3,9 +3,10 @@ interface PTextInput {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   className?: string;
+  disabled?: boolean;
 }
 
-const TextInput: React.FC<PTextInput> = ({ value, onChange, placeholder = '', className = '' }) => {
+const TextInput: React.FC<PTextInput> = ({ value, onChange, placeholder = '', className = '',disabled = false }) => {
   return (
     <input
       className={
@@ -16,6 +17,7 @@ const TextInput: React.FC<PTextInput> = ({ value, onChange, placeholder = '', cl
       onChange={onChange}
       type='text'
       placeholder={placeholder}
+      disabled={disabled}
     />
   );
 };
