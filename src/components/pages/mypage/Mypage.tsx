@@ -6,15 +6,15 @@ import ProfileView from '@/components/mypage/ProFileView';
 const MyPage: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false); // 수정 상태 관리
 
-  const user = {
+  const [userData, setUserData] = useState({
     이름: '김싸피',
     닉네임: '싸피킴',
     이메일: 'kim@gmail.com',
     전화번호: '010-1234-5678',
     조직: 'SSAFY 12기',
-    기술스택: ['React', 'TypeScript'], // 초기 기술 스택
-    희망직무: ['백엔드'], // 초기 희망 직무
-  };
+    기술스택: ['React', 'TypeScript'],
+    희망직무: ['백엔드'],
+  });
 
   const sidebarSections = [
     {
@@ -32,8 +32,9 @@ const MyPage: React.FC = () => {
   ];
 
   // 수정 완료 핸들러
-  const handleSave = (updatedValues: any) => {
-    console.log('수정된 값:', updatedValues);
+  const handleSave = (updatedData: any) => {
+    console.log('수정된 값:', updatedData);
+    setUserData(updatedData);
     setIsEditing(false); // 수정 완료 후 보기 상태로 변경
   };
 
@@ -52,12 +53,12 @@ const MyPage: React.FC = () => {
           <h2 className='-mt-6 mb-4 text-2xl font-bold text-gray-800'>내 정보</h2>
           {isEditing ? (
             <ProfileEditForm
-              initialValues={user}
+              initialValues={userData}
               onSubmit={handleSave}
               onCancel={() => setIsEditing(false)} // onCancel 추가
             />
           ) : (
-            <ProfileView user={user} onEdit={() => setIsEditing(true)} />
+            <ProfileView user={userData} onEdit={() => setIsEditing(true)} />
           )}
         </div>
       </div>
