@@ -6,11 +6,12 @@ import { useState } from 'react';
 interface PDatePicker {
   placeholder: string;
   value: Date | null;
+  id?: string;
   setDate?: React.Dispatch<React.SetStateAction<Date | null>>;
   startDate?: Date | null;
 }
 
-const DatePicker: React.FC<PDatePicker> = ({ placeholder, value, setDate, startDate }) => {
+const DatePicker: React.FC<PDatePicker> = ({ placeholder, value, id, setDate, startDate }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const ref = useClickOutsideRef<HTMLDivElement>(() => setIsOpen(false));
@@ -18,6 +19,7 @@ const DatePicker: React.FC<PDatePicker> = ({ placeholder, value, setDate, startD
   return (
     <div className='relative w-full' ref={ref}>
       <button
+        id={id}
         className='flex w-full items-center gap-2 rounded-sm border border-input px-4 py-2.5 text-body2 focus:outline-activate'
         onClick={() => setIsOpen((prev) => !prev)}
       >
