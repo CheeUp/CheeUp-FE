@@ -1,5 +1,5 @@
 import DatePicker from '@/components/recruit/calendar/DatePicker';
-import RecruitFormDropdown from '@/components/recruit/new/RecruitFormDropdown';
+import Dropdown from '@/components/ui/dropdown/Dropdown';
 import Button from '@/components/ui/button/Button';
 import TextInput from '@/components/ui/input/TextInput';
 import useTextInput from '@/hooks/useTextInput';
@@ -88,12 +88,13 @@ const RecruitForm: React.FC = () => {
               기업 규모
             </label>
             <div className={INPUT_CLASS}>
-              <RecruitFormDropdown
+              <Dropdown
                 id={businessScaleId}
                 placeholder='기업 규모를 선택해 주세요.'
                 options={businessScaleList}
                 selected={businessScale}
                 setSelected={handleBusinessScale}
+                color='gray'
               />
             </div>
           </fieldset>
@@ -104,12 +105,13 @@ const RecruitForm: React.FC = () => {
               직무
             </label>
             <div className={INPUT_CLASS}>
-              <RecruitFormDropdown
+              <Dropdown
                 id={jobId}
                 placeholder='직무를 선택해 주세요.'
                 options={jobList}
                 selected={jobList.filter((item) => job.includes(item))}
                 setSelected={handleJob}
+                color='gray'
               />
             </div>
           </fieldset>
@@ -118,12 +120,13 @@ const RecruitForm: React.FC = () => {
               채용 형태
             </label>
             <div className={INPUT_CLASS}>
-              <RecruitFormDropdown
+              <Dropdown
                 id={recruitTypeId}
                 placeholder='채용 형태를 선택해 주세요.'
                 options={recruitTypeList}
                 selected={recruitTypeList.filter((item) => recruitType.includes(item))}
                 setSelected={handleRecruitType}
+                color='gray'
               />
             </div>
           </fieldset>
