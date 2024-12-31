@@ -77,3 +77,15 @@
 body {
   background-color: var(--background);
 }
+
+.w-md-editor-toolbar {
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none;
+}
+
+pre.w-md-editor-text-pre textarea.w-md-editor-text-input  {
+  display: flex;
+  align-items: center; 
+  margin: 0;
+  padding: 0;
+}
