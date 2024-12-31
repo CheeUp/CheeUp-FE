@@ -6,7 +6,6 @@ import BasicInfoForm from '@/components/portfolio/forms/BasicInfoForm';
 import PersonalInfoForm from '@/components/portfolio/forms/PersonalInfoForm';
 import useStepper from '@/hooks/useStepper';
 import { PortfolioStepList } from '@/lib/portfolio';
-import TechStackForm from '@/components/portfolio/forms/TechStackForm';
 
 const NewPortfolioPage: React.FC = () => {
   const { currentStep, stepList, goToNextStep } = useStepper(PortfolioStepList);
