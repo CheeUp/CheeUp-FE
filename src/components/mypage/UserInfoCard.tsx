@@ -11,34 +11,28 @@ interface UserInfoCardProps {
 
 const UserInfoCard: React.FC<UserInfoCardProps> = ({ profileImage, nickname, tier, level, exp }) => {
   return (
-    <div className="bg-primary-light text-white rounded-md p-4 shadow-md flex flex-col items-start">
+    <div className='flex flex-col items-start rounded-md bg-primary-light p-4 text-white shadow-md'>
       <div className='flex items-center gap-2'>
         {/* 프로필 이미지 */}
-        <div className="flex flex-col items-center mb-4">
-          <Avatar
-            src={profileImage}
-            size='sm'
-          />
+        <div className='mb-4 flex flex-col items-center'>
+          <Avatar src={profileImage} size='sm' />
         </div>
 
         {/* 닉네임, 티어 */}
-        <div className="flex items-center gap-2">
-          <p className="text-lg font-bold">{nickname}</p>
-          <p className="text-sm ">{tier}</p>
+        <div className='flex items-center gap-2'>
+          <p className='text-lg font-bold'>{nickname}</p>
+          <p className='text-sm'>{tier}</p>
         </div>
       </div>
       {/* 경험치 바와 현재 경험치 텍스트 */}
-      <div className="flex items-center gap-2 w-full">
+      <div className='flex w-full items-center gap-2'>
         {/* 경험치 바 */}
-        <div className="w-full bg-white rounded-full h-4">
-          <div
-            className="bg-blue-700 h-4 rounded-full"
-            style={{ width: `${exp}%` }}
-          ></div>
+        <div className='h-4 w-full rounded-full bg-white'>
+          <div className='h-4 rounded-full bg-blue-700' style={{ width: `${exp}%` }}></div>
         </div>
 
         {/* 현재 경험치 텍스트 */}
-        <span className="text-white text-sm font-medium">{`${exp}%`}</span>
+        <span className='text-sm font-medium text-white'>{`${exp}%`}</span>
       </div>
     </div>
   );
