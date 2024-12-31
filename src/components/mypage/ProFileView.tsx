@@ -11,18 +11,32 @@ interface ProfileViewProps {
     조직: string;
     기술스택: string[];
     희망직무: string[];
+    프로필사진?: string;
   };
-  onEdit: () => void; // 수정 버튼 클릭 핸들러
+  onEdit: () => void; 
 }
 
 const ProfileView: React.FC<ProfileViewProps> = ({ user, onEdit }) => {
   return (
     <div className='space-y-6 rounded-md bg-white p-6 shadow-md'>
-      <h1 className='mb-4 text-2xl font-bold text-gray-800'>{user.이름}의 마이페이지</h1>
+      {/* 프로필 사진 */}
+      <div className="flex flex-col items-center">
+        <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border border-gray-300">
+          {user.프로필사진 ? (
+            <img src={user.프로필사진} alt="프로필 사진" className="w-full h-full object-cover" />
+          ) : (
+            <img
+              src="/default-profile.png"
+              alt="디폴트 프로필 사진"
+              className="w-full h-full object-cover"
+            />
+          )}
+        </div>
+      </div>
 
       {/* 기본 정보 */}
       {Object.keys(user)
-        .filter((key) => !['기술스택', '희망직무'].includes(key))
+        .filter((key) => !['기술스택', '희망직무','프로필사진'].includes(key))
         .map((key) => (
           <div key={key}>
             <label className='mb-2 block text-sm font-medium text-gray-700'>{key}</label>

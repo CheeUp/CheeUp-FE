@@ -1,5 +1,5 @@
 import React from 'react';
-import FiSearch from '@/components/FiSearch';
+import FiSearch from '@/components/ui/icons/FiSearch';
 
 const SearchBar: React.FC<{
   value: string;
