@@ -7,7 +7,7 @@ const CALENDER_LENGTH = 35;
 const DEFAULT_TRASH_VALUE = 0;
 const DAY_OF_WEEK = 7;
 
-const useCalendar = () => {
+const useRecruitCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const totalMonthDays = getDaysInMonth(currentDate);
   // TODO: currentDate가 바뀔 때마다 공고 리스트 가져오기
@@ -67,4 +67,4 @@ const useCalendar = () => {
     setCurrentDate,
   };
 };
-export default useCalendar;
+export default useRecruitCalendar;
