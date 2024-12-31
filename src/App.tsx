@@ -1,6 +1,7 @@
 import Header from '@/components/layout/Header';
 import RecruitPage from '@/components/pages/recruit';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MyPage from '@/components/pages/mypage/Mypage';
 import PortfolioPage from '@/components/pages/portfolio';
 import NewPortfolioPage from '@/components/pages/portfolio/new';
 import MyPage from '@/components/pages/mypage/Mypage';
