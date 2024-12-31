@@ -38,6 +38,12 @@ const MyPage: React.FC = () => {
     setIsEditing(false); // 수정 완료 후 보기 상태로 변경
   };
 
+  const handleDelete = () => {
+    if (window.confirm('정말로 탈퇴하시겠습니까?')) {
+      console.log('탈퇴 처리 로직 실행');
+    }
+  };
+
   return (
     <div className='flex h-full items-start justify-center bg-background'>
       <div className='flex w-4/5 max-w-screen-lg bg-background pt-8'>
@@ -52,13 +58,9 @@ const MyPage: React.FC = () => {
           {/* 제목 추가 */}
           <h2 className='-mt-6 mb-4 text-2xl font-bold text-gray-800'>내 정보</h2>
           {isEditing ? (
-            <ProfileEditForm
-              initialValues={userData}
-              onSubmit={handleSave}
-              onCancel={() => setIsEditing(false)} // onCancel 추가
-            />
+            <ProfileEditForm initialValues={userData} onSubmit={handleSave} onCancel={() => setIsEditing(false)} />
           ) : (
-            <ProfileView user={userData} onEdit={() => setIsEditing(true)} />
+            <ProfileView user={userData} onEdit={() => setIsEditing(true)} onDelete={handleDelete} />
           )}
         </div>
       </div>
