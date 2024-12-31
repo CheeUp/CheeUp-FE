@@ -22,20 +22,17 @@ const RightArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = () => {
     </svg>
   );
 };
-const UpArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = () => {
+const UpArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ width = '28', height = '28', fill = '#6F90F4' }) => {
   return (
-    <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path d='M8.645 17.977L14 12.6337L19.355 17.977L21 16.332L14 9.33203L7 16.332L8.645 17.977Z' fill='#6F90F4' />
+    <svg width={width} height={height} viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path d='M8.645 17.977L14 12.6337L19.355 17.977L21 16.332L14 9.33203L7 16.332L8.645 17.977Z' fill={fill} />
     </svg>
   );
 };
-const DownArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = () => {
+const DownArrowIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({ width = '28', height = '28', fill = '#6F90F4' }) => {
   return (
-    <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
-      <path
-        d='M8.645 10.0117L14 15.3667L19.355 10.0117L21 11.6684L14 18.6684L7 11.6684L8.645 10.0117Z'
-        fill='#6F90F4'
-      />
+    <svg width={width} height={height} viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path d='M8.645 10.0117L14 15.3667L19.355 10.0117L21 11.6684L14 18.6684L7 11.6684L8.645 10.0117Z' fill={fill} />
     </svg>
   );
 };
