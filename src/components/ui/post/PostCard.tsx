@@ -40,17 +40,12 @@ const PostCard: React.FC<PPostCard> = ({
 
   return (
     <div className='flex justify-center'>
-      <div className='flex h-[133px] w-[766px] justify-between border bg-white px-[40px] py-[32px]'>
+      <div className='flex h-[133px] w-[766px] justify-between border bg-white px-[40px] py-[24px]'>
         {(profileImage || nickname || tier) && (
-          <div className='flex h-[36px] w-[133px] items-center justify-between'>
-            {profileImage && (
-              <Avatar
-                src='https://i.namu.wiki/i/lOuQyz5W-tCsGMZx-ifAObAy0F__cjQuJb632FPWAuDhqRFzFb40tSijKE1xChUJ8Mb0K48iHcZyH-ZLjGY89xnDLkUaSyfLiSTK50DvtCbQZL-NQmyhgpONt0VWcKIwhf1AEiTy4CYzOJJmjxXY4w.webp'
-                size='sm'
-              />
-            )}
-            <div className='flex w-[73px] items-center justify-between'>
-              {nickname && <div className='text-body2 font-bold text-deepgray'>{nickname}</div>}
+          <div className='flex h-[36px] w-[130px] items-center justify-between'>
+            {profileImage && <Avatar src={profileImage} size='sm' />}
+            <div className='flex items-center justify-between gap-2'>
+              {nickname && <div className='w-[50px] text-wrap text-body2 font-bold text-deepgray'>{nickname}</div>}
               {tier && (
                 <div
                   className='flex h-[14px] w-[14px] items-center justify-center rounded-[2px]'
@@ -62,7 +57,7 @@ const PostCard: React.FC<PPostCard> = ({
             </div>
           </div>
         )}
-        <div className='flex h-[75px] w-[418px] flex-col justify-between'>
+        <div className='flex flex-col justify-between'>
           <div className='text-body2 font-bold'>{title}</div>
           <div className='text-detail text-deepgray'>{content}</div>
           <div className='flex items-center text-detail font-bold'>
