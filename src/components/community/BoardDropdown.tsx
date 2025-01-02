@@ -22,11 +22,7 @@ const BoardDropdown: React.FC<PBoardDropdown> = ({ boards, selectedBoard, onSele
           {selectedBoard || '카테고리'}
         </div>
         <div className='cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? (
-            <UpArrowIcon width={18} height={18} fill='#e9e9e9' />
-          ) : (
-            <DownArrowIcon width={18} height={18} fill='#e9e9e9' />
-          )}
+          {isOpen ? <UpArrowIcon size={18} color='#e9e9e9' /> : <DownArrowIcon size={18} color='#e9e9e9' />}
         </div>
       </div>
       {isOpen && (
