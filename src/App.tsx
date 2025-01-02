@@ -3,7 +3,8 @@ import RecruitPage from '@/components/pages/recruit';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PortfolioPage from '@/components/pages/portfolio';
 import NewPortfolioPage from '@/components/pages/portfolio/new';
-import NewPostPage from '@/components/pages/community/post';
+import NewPostPage from '@/components/pages/community/new';
+import NewRecruitPage from '@/components/pages/recruit/new';
 
 const App: React.FC = () => {
   return (
