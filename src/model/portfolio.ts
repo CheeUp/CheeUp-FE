@@ -24,6 +24,8 @@ export const SkillLevel = {
 
 export type TSkillLevel = keyof typeof SkillLevel;
 
+export type TMilitary = '군필' | '미필' | '면제' | '해당없음';
+
 export type TMilitaryBranch = '육군' | '해군' | '공군' | '해병' | '전경' | '의경' | '공익' | '기타';
 
 export type TMilitaryRank = '이병' | '일병' | '상병' | '병장' | '소위' | '중위' | '대위';

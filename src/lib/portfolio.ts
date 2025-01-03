@@ -1,4 +1,12 @@
-import { TDisabilityGrade, TMilitaryBranch, TMilitaryRank, TStepItem } from '@/model/portfolio';
+import { TDisabilityGrade, TMilitary, TMilitaryBranch, TMilitaryRank, TStepItem } from '@/model/portfolio';
+
+export const militaryList: TMilitary[] = ['군필', '미필', '면제', '해당없음'];
+
+export const militaryBranchList: TMilitaryBranch[] = ['육군', '해군', '공군', '해병', '전경', '의경', '공익', '기타'];
+
+export const militaryRankList: TMilitaryRank[] = ['이병', '일병', '상병', '병장', '소위', '중위', '대위'];
+
+export const disabilityGradeList: TDisabilityGrade[] = ['중증', '경증', '1급', '2급', '3급', '4급', '5급', '6급'];
 
 export const portfolioStepList: TStepItem[] = [
   {
@@ -37,9 +45,3 @@ export const portfolioStepList: TStepItem[] = [
     content: '상세 프로세스',
   },
 ];
-
-export const militaryBranchList: TMilitaryBranch[] = ['육군', '해군', '공군', '해병', '전경', '의경', '공익', '기타'];
-
-export const militaryRankList: TMilitaryRank[] = ['이병', '일병', '상병', '병장', '소위', '중위', '대위'];
-
-export const disabilityGradeList: TDisabilityGrade[] = ['중증', '경증', '1급', '2급', '3급', '4급', '5급', '6급'];

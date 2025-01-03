@@ -1,13 +1,13 @@
 import { useId, useState } from 'react';
 import TextInput from '@/components/ui/input/TextInput';
 import { H2 } from '@/components/ui/typography/Heading';
+import RadioButtonGroup from '@/components/ui/button/RadioButtonGroup';
+import Dropdown from '@/components/ui/dropdown/Dropdown';
+import CheckboxIcon from '@/components/ui/icons/CheckboxIcon';
+import RequiredInputIcon from '@/components/ui/icons/RequiredInputIcon';
 import useTextInput from '@/hooks/useTextInput';
 import useRadioButtonGroup from '@/hooks/useRadioButtonGroup';
-import RadioButtonGroup from '@/components/ui/button/RadioButtonGroup';
-import CheckboxIcon from '@/components/ui/icons/CheckboxIcon';
-import Dropdown from '@/components/ui/dropdown/Dropdown';
-import { disabilityGradeList, militaryBranchList, militaryRankList } from '@/lib/portfolio';
-import RequiredInputIcon from '@/components/ui/icons/RequiredInputIcon';
+import { disabilityGradeList, militaryList, militaryBranchList, militaryRankList } from '@/lib/portfolio';
 
 const SECTION_CLASS = 'flex flex-col gap-4 py-4';
 const LEGEND_CLASS = 'py-2 text-detail font-semibold';
@@ -148,12 +148,7 @@ const PersonalInfoForm: React.FC = () => {
             <label htmlFor={militaryId}>병역</label>
             <RequiredInputIcon />
           </legend>
-          <RadioButtonGroup
-            id={militaryId}
-            options={['군필', '미필', '면제', '해당없음']}
-            selected={military}
-            onSelect={setMilitary}
-          />
+          <RadioButtonGroup id={militaryId} options={militaryList} selected={military} onSelect={setMilitary} />
           {military === '군필' && (
             <div className='flex gap-4 py-4'>
               <Dropdown
