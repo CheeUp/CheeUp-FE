@@ -40,7 +40,7 @@ const PostCard: React.FC<PPostCard> = ({
 
   return (
     <div className='flex justify-center'>
-      <div className='flex h-[133px] w-[766px] justify-between border bg-white px-[40px] py-[24px]'>
+      <div className='flex h-[133px] w-[766px]  border bg-white px-[40px] py-[24px] gap-8'>
         {(profileImage || nickname || tier) && (
           <div className='flex h-[36px] w-[130px] items-center justify-between'>
             {profileImage && <Avatar src={profileImage} size='sm' />}
@@ -75,10 +75,10 @@ const PostCard: React.FC<PPostCard> = ({
             </div>
           </div>
         </div>
-        <div className='text-detail text-deepgray'>{timestamp}</div>
+        <div className='text-detail text-deepgray ml-auto'>{timestamp}</div>
       </div>
     </div>
   );
 };
-
+export type { Tier };
 export default PostCard;
