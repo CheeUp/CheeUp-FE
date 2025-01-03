@@ -26,21 +26,22 @@ const PersonalInfoForm: React.FC = () => {
   const [veteran, setVeteran] = useRadioButtonGroup('');
   // TODO: 보훈 관계, 비율 추가
 
-  const [disablity, setDisablity] = useRadioButtonGroup('');
-  const [disablityGrade, setDisablityGrade] = useState<string>('');
+  const [disability, setDisability] = useRadioButtonGroup('');
+  const [disabilityGrade, setDisabilityGrade] = useState<string>('');
   // TODO: 장애 종류 추가
 
   const [isPrivacyConsent, setIsPrivacyConsent] = useState<boolean>(false);
 
-  const nameId = useId();
-  const emailId = useId();
-  const introductionId = useId();
-  const githubUrlId = useId();
-  const blogUrlId = useId();
-
-  const militaryId = useId();
-  const veteranId = useId();
-  const disablityId = useId();
+  const ids = {
+    name: useId(),
+    email: useId(),
+    introduction: useId(),
+    githubUrl: useId(),
+    blogUrl: useId(),
+    military: useId(),
+    veteran: useId(),
+    disability: useId(),
+  };
 
   const handleConsentClick = () => {
     setIsPrivacyConsent((prevState) => !prevState);
@@ -54,8 +55,8 @@ const PersonalInfoForm: React.FC = () => {
     setMilitaryRank(militaryRank);
   };
 
-  const handleDisablityGrade = (disablityGrade: string) => {
-    setDisablityGrade(disablityGrade);
+  const handleDisabilityGrade = (disabilityGrade: string) => {
+    setDisabilityGrade(disabilityGrade);
   };
 
   return (
@@ -68,11 +69,11 @@ const PersonalInfoForm: React.FC = () => {
       <section className={SECTION_CLASS}>
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={nameId}>이름</label>
+            <label htmlFor={ids.name}>이름</label>
             <RequiredInputIcon />
           </legend>
           <TextInput
-            id={nameId}
+            id={ids.name}
             value={name}
             onChange={setName}
             placeholder='이름을 입력해 주세요.'
@@ -82,11 +83,11 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={emailId}>이메일</label>
+            <label htmlFor={ids.email}>이메일</label>
             <RequiredInputIcon />
           </legend>
           <TextInput
-            id={emailId}
+            id={ids.email}
             value={email}
             onChange={setEmail}
             placeholder='이메일을 입력해 주세요.'
@@ -96,11 +97,11 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={introductionId}>자기소개</label>
+            <label htmlFor={ids.introduction}>자기소개</label>
             <RequiredInputIcon />
           </legend>
           <TextInput
-            id={introductionId}
+            id={ids.introduction}
             value={introduction}
             onChange={setIntroduction}
             placeholder='자유롭게 소개해 주세요.'
@@ -110,10 +111,10 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={githubUrlId}>GitHub</label>
+            <label htmlFor={ids.githubUrl}>GitHub</label>
           </legend>
           <TextInput
-            id={githubUrlId}
+            id={ids.githubUrl}
             value={githubUrl}
             onChange={setGithubUrl}
             placeholder='깃허브 주소를 입력해 주세요.'
@@ -123,10 +124,10 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={blogUrlId}>기술 블로그</label>
+            <label htmlFor={ids.blogUrl}>기술 블로그</label>
           </legend>
           <TextInput
-            id={blogUrlId}
+            id={ids.blogUrl}
             value={blogUrl}
             onChange={setBlogUrl}
             placeholder='블로그 주소를 입력해 주세요.'
@@ -145,10 +146,10 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={militaryId}>병역</label>
+            <label htmlFor={ids.military}>병역</label>
             <RequiredInputIcon />
           </legend>
-          <RadioButtonGroup id={militaryId} options={militaryList} selected={military} onSelect={setMilitary} />
+          <RadioButtonGroup id={ids.military} options={militaryList} selected={military} onSelect={setMilitary} />
           {military === '군필' && (
             <div className='flex gap-4 py-4'>
               <Dropdown
@@ -169,23 +170,23 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={veteranId}>보훈 여부</label>
+            <label htmlFor={ids.veteran}>보훈 여부</label>
             <RequiredInputIcon />
           </legend>
-          <RadioButtonGroup id={veteranId} options={['대상', '비대상']} selected={veteran} onSelect={setVeteran} />
+          <RadioButtonGroup id={ids.veteran} options={['대상', '비대상']} selected={veteran} onSelect={setVeteran} />
           {veteran === '대상' && (
             <div className='flex gap-4 py-4'>
               <Dropdown
                 placeholder='관계 선택'
                 options={disabilityGradeList}
-                selected={disablityGrade}
-                setSelected={handleDisablityGrade}
+                selected={disabilityGrade}
+                setSelected={handleDisabilityGrade}
               />
               <Dropdown
                 placeholder='비율 선택'
                 options={disabilityGradeList}
-                selected={disablityGrade}
-                setSelected={handleDisablityGrade}
+                selected={disabilityGrade}
+                setSelected={handleDisabilityGrade}
               />
             </div>
           )}
@@ -193,28 +194,28 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={disablityId}>장애 여부</label>
+            <label htmlFor={ids.disability}>장애 여부</label>
             <RequiredInputIcon />
           </legend>
           <RadioButtonGroup
-            id={disablityId}
+            id={ids.disability}
             options={['대상', '비대상']}
-            selected={disablity}
-            onSelect={setDisablity}
+            selected={disability}
+            onSelect={setDisability}
           />
-          {disablity === '대상' && (
+          {disability === '대상' && (
             <div className='flex gap-4 py-4'>
               <Dropdown
                 placeholder='장애 종류 선택'
                 options={disabilityGradeList}
-                selected={disablityGrade}
-                setSelected={handleDisablityGrade}
+                selected={disabilityGrade}
+                setSelected={handleDisabilityGrade}
               />
               <Dropdown
                 placeholder='장애 등급 선택'
                 options={disabilityGradeList}
-                selected={disablityGrade}
-                setSelected={handleDisablityGrade}
+                selected={disabilityGrade}
+                setSelected={handleDisabilityGrade}
               />
             </div>
           )}
