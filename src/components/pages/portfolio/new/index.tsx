@@ -4,6 +4,7 @@ import { H1 } from '@/components/ui/typography/Heading';
 import { StepperWithText } from '@/components/ui/stepper/StepperWithText';
 import BasicInfoForm from '@/components/portfolio/forms/BasicInfoForm';
 import PersonalInfoForm from '@/components/portfolio/forms/PersonalInfoForm';
+import TechStackForm from '@/components/portfolio/forms/TechStackForm';
 import useStepper from '@/hooks/useStepper';
 import { portfolioStepList } from '@/lib/portfolio';
 
@@ -16,6 +17,8 @@ const NewPortfolioPage: React.FC = () => {
         return <BasicInfoForm />;
       case 2:
         return <PersonalInfoForm />;
+      case 5:
+        return <TechStackForm />;
     }
   };
 
