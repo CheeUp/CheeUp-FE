@@ -5,10 +5,10 @@ import { StepperWithText } from '@/components/ui/stepper/StepperWithText';
 import BasicInfoForm from '@/components/portfolio/forms/BasicInfoForm';
 import PersonalInfoForm from '@/components/portfolio/forms/PersonalInfoForm';
 import useStepper from '@/hooks/useStepper';
-import { PortfolioStepList } from '@/lib/portfolio';
+import { portfolioStepList } from '@/lib/portfolio';
 
 const NewPortfolioPage: React.FC = () => {
-  const { currentStep, stepList, goToNextStep } = useStepper(PortfolioStepList);
+  const { currentStep, stepList, goToNextStep } = useStepper(portfolioStepList);
 
   const renderForm = () => {
     switch (currentStep) {
