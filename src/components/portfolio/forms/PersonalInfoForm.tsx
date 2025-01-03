@@ -82,7 +82,7 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={email}>이메일</label>
+            <label htmlFor={emailId}>이메일</label>
             <RequiredInputIcon />
           </legend>
           <TextInput
@@ -96,7 +96,7 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={introduction}>자기소개</label>
+            <label htmlFor={introductionId}>자기소개</label>
             <RequiredInputIcon />
           </legend>
           <TextInput
@@ -110,7 +110,7 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={githubUrl}>GitHub</label>
+            <label htmlFor={githubUrlId}>GitHub</label>
           </legend>
           <TextInput
             id={githubUrlId}
@@ -123,7 +123,7 @@ const PersonalInfoForm: React.FC = () => {
 
         <fieldset>
           <legend className={LEGEND_CLASS}>
-            <label htmlFor={blogUrl}>기술 블로그</label>
+            <label htmlFor={blogUrlId}>기술 블로그</label>
           </legend>
           <TextInput
             id={blogUrlId}

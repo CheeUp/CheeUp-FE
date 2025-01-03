@@ -1,3 +1,4 @@
+import { disabilityGradeList, militaryBranchList, militaryList, militaryRankList } from '@/lib/portfolio';
 import { TJobEng } from '@/model/job';
 
 export interface TPortfolioInfo {
@@ -24,13 +25,13 @@ export const SkillLevel = {
 
 export type TSkillLevel = keyof typeof SkillLevel;
 
-export type TMilitary = '군필' | '미필' | '면제' | '해당없음';
+export type TMilitary = (typeof militaryList)[number];
 
-export type TMilitaryBranch = '육군' | '해군' | '공군' | '해병' | '전경' | '의경' | '공익' | '기타';
+export type TMilitaryBranch = (typeof militaryBranchList)[number];
 
-export type TMilitaryRank = '이병' | '일병' | '상병' | '병장' | '소위' | '중위' | '대위';
+export type TMilitaryRank = (typeof militaryRankList)[number];
 
-export type TDisabilityGrade = '중증' | '경증' | '1급' | '2급' | '3급' | '4급' | '5급' | '6급';
+export type TDisabilityGrade = (typeof disabilityGradeList)[number];
 
 export interface TStepItem {
   id: number;
