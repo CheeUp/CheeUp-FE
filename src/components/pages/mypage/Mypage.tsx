@@ -84,10 +84,28 @@ const MyPage: React.FC = () => {
       ) : (
         <ProfileView user={userData} onEdit={() => setIsEditing(true)} onDelete={handleDelete} />
       );
-    } else if (activePage === '내가 작성한 글') {
+    }  else if (activePage === '내가 작성한 글') {
       return (
         <div>
           <h2 className='mb-4 text-2xl font-bold text-gray-800'>내가 작성한 글</h2>
+          {posts.map((post, index) => (
+            <PostCard key={index} {...post} />
+          ))}
+        </div>
+      );
+    } else if (activePage === '스크랩한 공고') {
+      return (
+        <div>
+          <h2 className='mb-4 text-2xl font-bold text-gray-800'>스크랩한 공고</h2>
+          {posts.map((post, index) => (
+            <PostCard key={index} {...post} />
+          ))}
+        </div>
+      );
+    } else if (activePage === '스크랩한 글') {
+      return (
+        <div>
+          <h2 className='mb-4 text-2xl font-bold text-gray-800'>스크랩한 글</h2>
           {posts.map((post, index) => (
             <PostCard key={index} {...post} />
           ))}
@@ -111,15 +129,7 @@ const MyPage: React.FC = () => {
           />
         </div>
 
-        {/* 오른쪽 영역: 유저 폼 */}
-        {/* <div className='flex-1 p-6'>
-          <h2 className='-mt-6 mb-4 text-2xl font-bold text-gray-800'>내 정보</h2>
-          {isEditing ? (
-            <ProfileEditForm initialValues={userData} onSubmit={handleSave} onCancel={() => setIsEditing(false)} />
-          ) : (
-            <ProfileView user={userData} onEdit={() => setIsEditing(true)} onDelete={handleDelete} />
-          )}
-        </div> */}
+        {/* 오른쪽 영역 */}
         <div className='flex-1 p-6'>{renderContent()}</div>
       </div>
     </div>
