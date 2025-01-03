@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 interface PDropdown {
   placeholder: string;
-  options: string[];
+  options: readonly string[];
   selected: string[] | string;
   setSelected: (value: string) => void;
   id?: string;

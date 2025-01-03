@@ -1,7 +1,7 @@
 import CheckboxIcon from '@/components/ui/icons/CheckboxIcon';
 
 interface PDropdownList {
-  options: string[];
+  options: readonly string[];
   selected: string[] | string;
   setSelected: (selected: string) => void;
 }

@@ -1,6 +1,6 @@
 import Button from '@/components/ui/button/Button';
 import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
-import { MportfolioData } from '@/mocks/data/portfolio';
+import { MportfolioInfos } from '@/mocks/data/portfolio';
 import { useNavigate } from 'react-router-dom';
 
 const PortfolioSideBar: React.FC = () => {
@@ -19,7 +19,7 @@ const PortfolioSideBar: React.FC = () => {
         새로 만들기
       </Button>
       <div className='flex flex-col gap-4'>
-        {MportfolioData.map((info, index) => (
+        {MportfolioInfos.map((info, index) => (
           <PortfolioCard key={index} portfolioInfo={info} />
         ))}
       </div>

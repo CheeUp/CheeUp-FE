@@ -11,10 +11,10 @@ export interface TRecruitDetail extends TRecruitPreview {
   url: string;
   isLiked: boolean;
   jobNoticeFiles: string[];
-  jobDescriptions: TJotDescription[];
+  jobDescriptions: TJobDescription[];
 }
 
-export interface TJotDescription {
+export interface TJobDescription {
   id: number;
   type: '신입' | '경력';
   title: string;
