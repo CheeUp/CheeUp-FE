@@ -1,14 +1,18 @@
 import CalendarNavigation from '@/components/recruit/calendar/CalendarNavigation';
 import useCalendar from '@/hooks/useCalendar';
+import { formatTime } from '@/util/date';
 import { useEffect } from 'react';
 
 interface PSmallCalendar {
   selectedDate?: Date | null;
-  setDate?: React.Dispatch<React.SetStateAction<Date | null>>;
+  setDate?: (date: Date) => void;
   startDate?: Date | null;
+  isStartDate?: boolean;
+  time?: string;
+  setTime?: (time: string) => void;
 }
 
-const SmallCalendar: React.FC<PSmallCalendar> = ({ selectedDate, setDate, startDate }) => {
+const SmallCalendar: React.FC<PSmallCalendar> = ({ selectedDate, setDate, startDate, isStartDate, time, setTime }) => {
   const { weekCalendarList, currentDate, setCurrentDate } = useCalendar();
 
   useEffect(() => {
@@ -39,8 +43,24 @@ const SmallCalendar: React.FC<PSmallCalendar> = ({ selectedDate, setDate, startD
     setDate(date);
   };
 
+  const handleTime = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+    if (!/^[0-9:]*$/.test(inputValue)) return;
+    if (inputValue.length > 5) return;
+    if (setTime) {
+      setTime(inputValue);
+    }
+  };
+
+  const handleBlur = () => {
+    const formattedTime = formatTime(time || '');
+    if (setTime) {
+      setTime(formattedTime);
+    }
+  };
+
   return (
-    <div className='rounded-md border border-input bg-white px-2 pb-1'>
+    <div className='rounded-md border border-input bg-white px-2 pb-2'>
       <CalendarNavigation currentDate={currentDate} setCurrentDate={setCurrentDate} size='sm' />
       <table className='w-full'>
         <thead>
@@ -77,6 +97,21 @@ const SmallCalendar: React.FC<PSmallCalendar> = ({ selectedDate, setDate, startD
           ))}
         </tbody>
       </table>
+      {selectedDate && (
+        <>
+          <hr className='my-2 border-border' />
+          <label className='text-body2'>
+            {isStartDate ? '시작' : '종료'} 시간:{' '}
+            <input
+              className='w-12 border border-input px-1 focus:outline-none'
+              value={time}
+              onChange={handleTime}
+              maxLength={5}
+              onBlur={handleBlur}
+            />
+          </label>
+        </>
+      )}
     </div>
   );
 };
