@@ -8,9 +8,10 @@ interface SidebarSection {
 
 interface PSidebar {
   sections: SidebarSection[];
+  onItemClick?: (item: string) => void;
 }
 
-const Sidebar: React.FC<PSidebar> = ({ sections }) => {
+const Sidebar: React.FC<PSidebar> = ({ sections, onItemClick }) => {
   const [activeItem, setActiveItem] = useState<string>('');
 
   return (
@@ -19,7 +20,7 @@ const Sidebar: React.FC<PSidebar> = ({ sections }) => {
         <div key={section.title}>
           <h3 className='mb-2 px-4 text-detail font-semibold text-primary'>{section.title}</h3>
           {section.items.map((item) => (
-            <SidebarItem key={item} label={item} isActive={activeItem === item} onClick={() => setActiveItem(item)} />
+            <SidebarItem key={item} label={item} isActive={activeItem === item} onClick={() => {setActiveItem(item); onItemClick?.(item);} } />
           ))}
         </div>
       ))}
