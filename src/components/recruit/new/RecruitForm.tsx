@@ -22,13 +22,15 @@ const RecruitForm: React.FC = () => {
   const [recruitType, setRecruitType] = useState<string[]>([]);
   const [link, setLink] = useTextInput('');
 
-  const titleId = useId();
-  const dateId = useId();
-  const companyId = useId();
-  const businessScaleId = useId();
-  const jobId = useId();
-  const recruitTypeId = useId();
-  const linkId = useId();
+  const ids = {
+    titleId: useId(),
+    dateId: useId(),
+    companyId: useId(),
+    businessScaleId: useId(),
+    jobId: useId(),
+    recruitTypeId: useId(),
+    linkId: useId(),
+  };
 
   const handleStartDate = (date: Date) => {
     setStartDate(date);
@@ -66,12 +68,12 @@ const RecruitForm: React.FC = () => {
     <div>
       <div className='flex w-full flex-col divide-y divide-input overflow-hidden rounded-lg border border-input bg-white'>
         <fieldset className={FIELDSET_CLASS}>
-          <label htmlFor={titleId} className={LABEL_CLASS}>
+          <label htmlFor={ids.titleId} className={LABEL_CLASS}>
             공고명
           </label>
           <div className={INPUT_CLASS}>
             <TextInput
-              id={titleId}
+              id={ids.titleId}
               className='w-full'
               value={title}
               onChange={setTitle}
@@ -80,12 +82,12 @@ const RecruitForm: React.FC = () => {
           </div>
         </fieldset>
         <fieldset className={FIELDSET_CLASS}>
-          <label htmlFor={dateId} className={LABEL_CLASS}>
+          <label htmlFor={ids.dateId} className={LABEL_CLASS}>
             모집 날짜
           </label>
           <div className={INPUT_CLASS + ' flex gap-4'}>
             <DatePicker
-              id={dateId}
+              id={ids.dateId}
               placeholder='시작'
               value={startDate}
               setDate={handleStartDate}
@@ -106,12 +108,12 @@ const RecruitForm: React.FC = () => {
         </fieldset>
         <div className='grid grid-cols-2 divide-x divide-input'>
           <fieldset className={FIELDSET_CLASS}>
-            <label htmlFor={companyId} className={LABEL_CLASS}>
+            <label htmlFor={ids.companyId} className={LABEL_CLASS}>
               기업명
             </label>
             <div className={INPUT_CLASS}>
               <TextInput
-                id={companyId}
+                id={ids.companyId}
                 className='w-full'
                 value={company}
                 onChange={setCompany}
@@ -120,12 +122,12 @@ const RecruitForm: React.FC = () => {
             </div>
           </fieldset>
           <fieldset className={FIELDSET_CLASS}>
-            <label htmlFor={businessScaleId} className={LABEL_CLASS}>
+            <label htmlFor={ids.businessScaleId} className={LABEL_CLASS}>
               기업 규모
             </label>
             <div className={INPUT_CLASS}>
               <Dropdown
-                id={businessScaleId}
+                id={ids.businessScaleId}
                 placeholder='기업 규모를 선택해 주세요.'
                 options={businessScaleList}
                 selected={businessScale}
@@ -137,12 +139,12 @@ const RecruitForm: React.FC = () => {
         </div>
         <div className='grid grid-cols-2 divide-x divide-input'>
           <fieldset className={FIELDSET_CLASS}>
-            <label htmlFor={jobId} className={LABEL_CLASS}>
+            <label htmlFor={ids.jobId} className={LABEL_CLASS}>
               직무
             </label>
             <div className={INPUT_CLASS}>
               <Dropdown
-                id={jobId}
+                id={ids.jobId}
                 placeholder='직무를 선택해 주세요.'
                 options={jobList}
                 selected={jobList.filter((item) => job.includes(item))}
@@ -152,12 +154,12 @@ const RecruitForm: React.FC = () => {
             </div>
           </fieldset>
           <fieldset className={FIELDSET_CLASS}>
-            <label htmlFor={recruitTypeId} className={LABEL_CLASS}>
+            <label htmlFor={ids.recruitTypeId} className={LABEL_CLASS}>
               채용 형태
             </label>
             <div className={INPUT_CLASS}>
               <Dropdown
-                id={recruitTypeId}
+                id={ids.recruitTypeId}
                 placeholder='채용 형태를 선택해 주세요.'
                 options={recruitTypeList}
                 selected={recruitTypeList.filter((item) => recruitType.includes(item))}
@@ -168,12 +170,12 @@ const RecruitForm: React.FC = () => {
           </fieldset>
         </div>
         <fieldset className={FIELDSET_CLASS}>
-          <label htmlFor={linkId} className={LABEL_CLASS}>
+          <label htmlFor={ids.linkId} className={LABEL_CLASS}>
             채용 사이트 링크
           </label>
           <div className={INPUT_CLASS}>
             <TextInput
-              id={linkId}
+              id={ids.linkId}
               className='w-full'
               value={link}
               onChange={setLink}
