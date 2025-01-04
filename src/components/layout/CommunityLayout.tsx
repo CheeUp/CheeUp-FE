@@ -14,11 +14,7 @@ const sections = [
   },
 ];
 
-interface PCommunityLayout {
-  children: React.ReactNode;
-}
-
-const CommunityLayout: React.FC<PCommunityLayout> = ({ children }) => {
+const CommunityLayout: React.FC = () => {
   const [activeItem, setActiveItem] = useState<string>('');
 
   useEffect(() => {
@@ -31,7 +27,7 @@ const CommunityLayout: React.FC<PCommunityLayout> = ({ children }) => {
 
   return (
     <div className='flex w-screen justify-center'>
-      <div className='flex w-[1080px] justify-between'>
+      <div className='flex w-base justify-between'>
         <div className='mt-9'>
           <Sidebar sections={sections} activeItem={activeItem} onItemClick={setActiveItem} />
         </div>
@@ -42,7 +38,7 @@ const CommunityLayout: React.FC<PCommunityLayout> = ({ children }) => {
               <Button onClick={handleCreatePost}>글쓰기</Button>
             </div>
           </div>
-          <div>{children}</div>
+          <div></div>
         </div>
       </div>
     </div>
