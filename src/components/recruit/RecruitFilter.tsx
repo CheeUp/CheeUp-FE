@@ -1,4 +1,4 @@
-import Dropdown from '@/components/ui/dropdown/Dropdown';
+import LabeledDropdown from '@/components/ui/dropdown/LabeledDropdown';
 import SearchIcon from '@/components/ui/icons/SearchIcon';
 import LabeledContent from '@/components/ui/LabeledContent';
 import useClickOutsideRef from '@/hooks/useClickOutsideRef';
@@ -32,7 +32,7 @@ const RecruitFilter: React.FC = () => {
     <div className='mt-8 flex h-20 items-center divide-x-2 divide-border rounded-md border-2 border-border bg-white'>
       <div ref={dropdownRef} className='flex w-3/5 items-center divide-x-2 divide-border'>
         <div className='w-1/3'>
-          <Dropdown
+          <LabeledDropdown
             label='기업 규모'
             placeholder='기업 규모 선택'
             options={businessScaleList}
@@ -45,7 +45,7 @@ const RecruitFilter: React.FC = () => {
           />
         </div>
         <div className='w-1/2'>
-          <Dropdown
+          <LabeledDropdown
             label='직무'
             placeholder='직무 선택'
             options={jobList}
@@ -56,7 +56,7 @@ const RecruitFilter: React.FC = () => {
           />
         </div>
         <div className='w-1/6'>
-          <Dropdown
+          <LabeledDropdown
             label='채용 형태'
             placeholder='채용 형태 선택'
             options={recruitTypeList}

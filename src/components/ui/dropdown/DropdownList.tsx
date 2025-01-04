@@ -2,7 +2,7 @@ import CheckboxIcon from '@/components/ui/icons/CheckboxIcon';
 
 interface PDropdownList {
   options: string[];
-  selected: string[];
+  selected: string[] | string;
   setSelected: (selected: string) => void;
 }
 
@@ -16,7 +16,7 @@ const DropdownList: React.FC<PDropdownList> = ({ options, selected, setSelected 
             key={idx}
             className='flex cursor-pointer items-center gap-1 px-5 py-1.5 hover:bg-black/5'
           >
-            <CheckboxIcon filled={selected.includes(option)} />
+            {typeof selected !== 'string' && <CheckboxIcon filled={selected.includes(option)} />}
             <span>{option}</span>
           </li>
         ))}
