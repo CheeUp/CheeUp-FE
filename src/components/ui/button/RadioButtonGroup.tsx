@@ -1,7 +1,7 @@
 import Button from '@/components/ui/button/Button';
 
 interface PRadioButtonGroup {
-  options: string[];
+  options: readonly string[];
   selected: string;
   onSelect: (value: string) => void;
   id?: string;
