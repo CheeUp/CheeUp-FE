@@ -1,26 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { TStepItem } from '@/model/portfolio';
+import { isNaturalNumber } from '@/util/number';
 
-const useStepper = (initialStep: number = 1, stepList: TStepItem[]) => {
-  const [currentStep, setCurrentStep] = useState<number>(initialStep);
-
+const useStepper = (stepList: TStepItem[]) => {
   const totalSteps = stepList.length;
+
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const step = Number(searchParams.get('step'));
+
+  const [currentStep, setCurrentStep] = useState<number>(1);
+
+  useEffect(() => {
+    if (!isNaturalNumber(step) || step > totalSteps) {
+      goToStep(1);
+    } else {
+      setCurrentStep(step);
+    }
+  }, [step, totalSteps]);
 
   const goToNextStep = () => {
     if (currentStep < totalSteps) {
-      setCurrentStep((prevStep) => prevStep + 1);
+      goToStep(currentStep + 1);
     }
   };
 
   const goToPreviousStep = () => {
     if (currentStep > 1) {
-      setCurrentStep((prevStep) => prevStep - 1);
+      goToStep(currentStep - 1);
     }
   };
 
   const goToStep = (step: number) => {
-    if (step < 1 || step > totalSteps) return;
-    setCurrentStep(step);
+    navigate(`?step=${step}`);
   };
 
   return {
@@ -28,7 +41,6 @@ const useStepper = (initialStep: number = 1, stepList: TStepItem[]) => {
     stepList,
     goToNextStep,
     goToPreviousStep,
-    goToStep,
   };
 };
 
