@@ -20,23 +20,17 @@ export const getDDay = (date: Date): string => {
   }
 };
 
+const formatTimePart = (value: string, max: number): string => {
+  if (!value) return '00';
+  const numericTime = Math.min(max, parseInt(value, 10));
+  return numericTime.toString().padStart(2, '0');
+};
+
 export const formatTime = (input: string): string => {
   const sanitizedInput = input.replace(/[^0-9]/g, '');
 
-  let hours = sanitizedInput.slice(0, 2);
-  let minutes = sanitizedInput.slice(2, 4);
-
-  if (hours) {
-    const numericHours = Math.min(23, parseInt(hours, 10));
-    hours = numericHours.toString().padStart(2, '0');
-  }
-
-  if (minutes) {
-    const numericMinutes = Math.min(59, parseInt(minutes, 10));
-    minutes = numericMinutes.toString().padStart(2, '0');
-  } else {
-    minutes = '00';
-  }
+  const hours = formatTimePart(sanitizedInput.slice(0, 2), 23);
+  const minutes = formatTimePart(sanitizedInput.slice(2, 4), 59);
 
   return `${hours}:${minutes}`;
 };
