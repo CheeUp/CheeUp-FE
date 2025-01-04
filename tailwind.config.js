@@ -88,6 +88,7 @@ export default {
       },
       backgroundColor: {
         background: 'var(--background)',
+        deepgray: 'var(--background-deepgray)',
         modal: 'var(--modal-background)',
       },
       width: {
