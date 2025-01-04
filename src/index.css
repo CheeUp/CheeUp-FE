@@ -78,3 +78,21 @@
 body {
   background-color: var(--background);
 }
+
+.w-md-editor-toolbar {
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: none;
+}
+
+.title-section .w-md-editor-text {
+  display: flex;
+  align-items: center; 
+  height: 44px;
+}
+
+.title-section textarea.w-md-editor-text-input {
+  line-height: 1.7;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

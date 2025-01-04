@@ -1,4 +1,4 @@
-interface PArrowIcon extends React.SVGProps<SVGSVGElement> {
+interface PArrowIcon {
   size?: number;
   color?: string;
 }

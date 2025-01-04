@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MyPage from '@/components/pages/mypage/Mypage';
 import PortfolioPage from '@/components/pages/portfolio';
 import NewPortfolioPage from '@/components/pages/portfolio/new';
+import NewPostPage from '@/components/pages/community/new';
 import NewRecruitPage from '@/components/pages/recruit/new';
 
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         </Route>
         <Route path='/portfolio' element={<PortfolioPage />} />
         <Route path='/portfolio/new' element={<NewPortfolioPage />} />
+        <Route path='/community/new' element={<NewPostPage />} />
       </Routes>
     </BrowserRouter>
   );
