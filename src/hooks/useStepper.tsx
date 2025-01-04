@@ -13,7 +13,7 @@ const useStepper = (stepList: TStepItem[]) => {
   const [currentStep, setCurrentStep] = useState<number>(1);
 
   useEffect(() => {
-    if (isNaturalNumber(step) || step > totalSteps) {
+    if (!isNaturalNumber(step) || step > totalSteps) {
       goToStep(1);
     } else {
       setCurrentStep(step);
