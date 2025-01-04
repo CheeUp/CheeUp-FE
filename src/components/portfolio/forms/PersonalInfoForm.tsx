@@ -4,13 +4,12 @@ import { H2 } from '@/components/ui/typography/Heading';
 import RadioButtonGroup from '@/components/ui/button/RadioButtonGroup';
 import Dropdown from '@/components/ui/dropdown/Dropdown';
 import CheckboxIcon from '@/components/ui/icons/CheckboxIcon';
-import RequiredInputIcon from '@/components/ui/icons/RequiredInputIcon';
+import Fieldset from '@/components/ui/Fieldset';
 import useTextInput from '@/hooks/useTextInput';
 import useRadioButtonGroup from '@/hooks/useRadioButtonGroup';
 import { disabilityGradeList, militaryList, militaryBranchList, militaryRankList } from '@/lib/portfolio';
 
 const SECTION_CLASS = 'flex flex-col gap-4 py-4';
-const LEGEND_CLASS = 'py-2 text-detail font-semibold';
 
 const PersonalInfoForm: React.FC = () => {
   const [name, setName] = useTextInput('');
@@ -67,11 +66,7 @@ const PersonalInfoForm: React.FC = () => {
       </section>
 
       <section className={SECTION_CLASS}>
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.name}>이름</label>
-            <RequiredInputIcon />
-          </legend>
+        <Fieldset id={ids.name} label='이름' required={true}>
           <TextInput
             id={ids.name}
             value={name}
@@ -79,13 +74,9 @@ const PersonalInfoForm: React.FC = () => {
             placeholder='이름을 입력해 주세요.'
             className='w-full'
           />
-        </fieldset>
+        </Fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.email}>이메일</label>
-            <RequiredInputIcon />
-          </legend>
+        <Fieldset id={ids.email} label='이메일' required={true}>
           <TextInput
             id={ids.email}
             value={email}
@@ -93,13 +84,9 @@ const PersonalInfoForm: React.FC = () => {
             placeholder='이메일을 입력해 주세요.'
             className='w-full'
           />
-        </fieldset>
+        </Fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.introduction}>자기소개</label>
-            <RequiredInputIcon />
-          </legend>
+        <Fieldset id={ids.introduction} label='자기소개' required={true}>
           <TextInput
             id={ids.introduction}
             value={introduction}
@@ -107,12 +94,9 @@ const PersonalInfoForm: React.FC = () => {
             placeholder='자유롭게 소개해 주세요.'
             className='w-full'
           />
-        </fieldset>
+        </Fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.githubUrl}>GitHub</label>
-          </legend>
+        <Fieldset id={ids.githubUrl} label='GitHub'>
           <TextInput
             id={ids.githubUrl}
             value={githubUrl}
@@ -120,12 +104,9 @@ const PersonalInfoForm: React.FC = () => {
             placeholder='깃허브 주소를 입력해 주세요.'
             className='w-full'
           />
-        </fieldset>
+        </Fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.blogUrl}>기술 블로그</label>
-          </legend>
+        <Fieldset id={ids.blogUrl} label='기술 블로그'>
           <TextInput
             id={ids.blogUrl}
             value={blogUrl}
@@ -133,7 +114,7 @@ const PersonalInfoForm: React.FC = () => {
             placeholder='블로그 주소를 입력해 주세요.'
             className='w-full'
           />
-        </fieldset>
+        </Fieldset>
       </section>
 
       {/* 이 아래로 민감 정보 수집 */}
@@ -144,11 +125,7 @@ const PersonalInfoForm: React.FC = () => {
           <span className='text-body2 font-semibold'>민감 정보 수집 및 이용 동의</span>
         </fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.military}>병역</label>
-            <RequiredInputIcon />
-          </legend>
+        <Fieldset id={ids.military} label='병역' required={true}>
           <RadioButtonGroup id={ids.military} options={militaryList} selected={military} onSelect={setMilitary} />
           {military === '군필' && (
             <div className='flex gap-4 py-4'>
@@ -166,13 +143,9 @@ const PersonalInfoForm: React.FC = () => {
               />
             </div>
           )}
-        </fieldset>
+        </Fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.veteran}>보훈 여부</label>
-            <RequiredInputIcon />
-          </legend>
+        <Fieldset id={ids.veteran} label='보훈 여부' required={true}>
           <RadioButtonGroup id={ids.veteran} options={['대상', '비대상']} selected={veteran} onSelect={setVeteran} />
           {veteran === '대상' && (
             <div className='flex gap-4 py-4'>
@@ -190,13 +163,9 @@ const PersonalInfoForm: React.FC = () => {
               />
             </div>
           )}
-        </fieldset>
+        </Fieldset>
 
-        <fieldset>
-          <legend className={LEGEND_CLASS}>
-            <label htmlFor={ids.disability}>장애 여부</label>
-            <RequiredInputIcon />
-          </legend>
+        <Fieldset id={ids.disability} label='장애 여부' required={true}>
           <RadioButtonGroup
             id={ids.disability}
             options={['대상', '비대상']}
@@ -219,7 +188,7 @@ const PersonalInfoForm: React.FC = () => {
               />
             </div>
           )}
-        </fieldset>
+        </Fieldset>
       </section>
     </div>
   );
