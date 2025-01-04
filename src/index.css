@@ -15,10 +15,14 @@
     --text-deepgray: #616161;
     --text-disabled: #9e9e9e;
     --background: #fafafa;
+    --background-deepgray: #ECECEE;
     --border: #e9e9e9;
     --border-input: #bdbdbd;
     --border-activate: #222222;
     --table-header: #eeeeee;
+    --calendar-header: rgba(0, 0, 0, 0.06);
+    --calendar-border: #b9b9b9;
+    --stepper-inactive: #ececee;
     --modal-background: rgba(0, 0, 0, 0.3);
     --warning: #ef2a2b;
     --darksalmon: #f49370;
@@ -28,6 +32,7 @@
     --lightcrimson: #f4708f;
     --lightgreen: #8ff470;
     --aquamarine: #70f4d5;
+    --shadow-modal: 0 0 10px rgba(0, 0, 0, 0.3);
 
     --text-heading1: 1.5rem;
     --text-heading2: 1.375rem;

@@ -1,5 +1,5 @@
-import React from 'react';
 import SidebarItem from '@/components/layout/SidebarItem';
+import React, { useState } from 'react';
 
 interface SidebarSection {
   title: string;
