@@ -13,7 +13,9 @@ const INPUT_CLASS = 'flex-grow p-6';
 const RecruitForm: React.FC = () => {
   const [title, setTitle] = useTextInput('');
   const [startDate, setStartDate] = useState<Date | null>(null);
+  const [startTime, setStartTime] = useState<string>('00:00');
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [endTime, setEndTime] = useState<string>('23:59');
   const [company, setCompany] = useTextInput('');
   const [businessScale, setBusinessScale] = useState<string>('');
   const [job, setJob] = useState<string[]>([]);
@@ -28,12 +30,30 @@ const RecruitForm: React.FC = () => {
   const recruitTypeId = useId();
   const linkId = useId();
 
+  const handleStartDate = (date: Date) => {
+    setStartDate(date);
+    if (endDate && date >= endDate) setEndDate(null);
+  };
+
+  const handleEndDate = (date: Date) => {
+    setEndDate(date);
+    if (startDate && date <= startDate) setStartDate(null);
+  };
+
+  const handleTime = (setTime: React.Dispatch<React.SetStateAction<string>>) => {
+    return (inputValue: string) => {
+      setTime(inputValue);
+    };
+  };
+
   const handleBusinessScale = (businessScale: string) => {
     setBusinessScale(businessScale);
   };
+
   const handleJob = (clickedJob: string) => {
     setJob(job.includes(clickedJob) ? job.filter((item) => item !== clickedJob) : [...job, clickedJob]);
   };
+
   const handleRecruitType = (clickedRecruitType: string) => {
     setRecruitType(
       recruitType.includes(clickedRecruitType)
@@ -64,8 +84,24 @@ const RecruitForm: React.FC = () => {
             모집 날짜
           </label>
           <div className={INPUT_CLASS + ' flex gap-4'}>
-            <DatePicker id={dateId} placeholder='시작' value={startDate} setDate={setStartDate} />
-            <DatePicker placeholder='종료' value={endDate} setDate={setEndDate} startDate={startDate} />
+            <DatePicker
+              id={dateId}
+              placeholder='시작'
+              value={startDate}
+              setDate={handleStartDate}
+              isStartDate={true}
+              time={startTime}
+              setTime={handleTime(setStartTime)}
+            />
+            <DatePicker
+              placeholder='종료'
+              value={endDate}
+              setDate={handleEndDate}
+              startDate={startDate}
+              isStartDate={false}
+              time={endTime}
+              setTime={handleTime(setEndTime)}
+            />
           </div>
         </fieldset>
         <div className='grid grid-cols-2 divide-x divide-input'>
