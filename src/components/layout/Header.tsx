@@ -1,12 +1,13 @@
+import React from 'react';
 import Logo from '@/components/Logo';
 import Button from '@/components/ui/button/Button';
-import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const navItems = [
   { title: '채용공고', to: '/recruit' },
   { title: '포트폴리오', to: '/portfolio' },
   { title: '커뮤니티', to: '/community' },
+  { title: '마이페이지', to: '/mypage' },
 ];
 
 const Navbar: React.FC = () => {

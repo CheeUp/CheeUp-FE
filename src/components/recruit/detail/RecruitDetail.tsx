@@ -46,7 +46,7 @@ const RecruitDetail: React.FC<PRecruitDetail> = ({ id, close }) => {
       ref={backgroundRef}
       onMouseDown={closeModal}
     >
-      <div className='drop-shadow-modal mx-auto my-16 flex w-[55rem] flex-col gap-6 rounded-xl bg-white px-10 py-8'>
+      <div className='mx-auto my-16 flex w-[55rem] flex-col gap-6 rounded-xl bg-white px-10 py-8 drop-shadow-modal'>
         <button className='absolute right-5 top-5' onClick={close}>
           <CloseIcon />
         </button>
