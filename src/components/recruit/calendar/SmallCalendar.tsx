@@ -44,17 +44,17 @@ const SmallCalendar: React.FC<PSmallCalendar> = ({ selectedDate, setDate, startD
   };
 
   const handleTime = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value;
-    if (!/^[0-9:]*$/.test(inputValue)) return;
-    if (inputValue.length > 5) return;
     if (setTime) {
+      const inputValue = e.target.value;
+      if (!/^[0-9:]*$/.test(inputValue)) return;
+      if (inputValue.length > 5) return;
       setTime(inputValue);
     }
   };
 
   const handleBlur = () => {
-    const formattedTime = formatTime(time || '');
     if (setTime) {
+      const formattedTime = formatTime(time || '');
       setTime(formattedTime);
     }
   };
