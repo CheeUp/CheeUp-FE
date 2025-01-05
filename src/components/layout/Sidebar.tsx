@@ -14,13 +14,18 @@ interface PSidebar {
 const Sidebar: React.FC<PSidebar> = ({ sections, onItemClick }) => {
   const [activeItem, setActiveItem] = useState<string>('');
 
+  const handleItemClick = (item: string) => {
+    setActiveItem(item);
+    onItemClick?.(item);
+  };
+
   return (
     <div className='flex w-64 flex-col gap-8 rounded-lg bg-white px-2 py-6'>
       {sections.map((section) => (
         <div key={section.title}>
           <h3 className='mb-2 px-4 text-detail font-semibold text-primary'>{section.title}</h3>
           {section.items.map((item) => (
-            <SidebarItem key={item} label={item} isActive={activeItem === item} onClick={() => {setActiveItem(item); onItemClick?.(item);} } />
+            <SidebarItem key={item} label={item} isActive={activeItem === item} onClick={() => handleItemClick(item)} />
           ))}
         </div>
       ))}

@@ -4,46 +4,17 @@ import UserInfoCard from '@/components/mypage/UserInfoCard';
 import ProfileEditForm from '@/components/mypage/ProFileEditForm';
 import ProfileView from '@/components/mypage/ProFileView';
 import PostCard, {type Tier} from '@/components/ui/post/PostCard';
+import userDataMock from '@/mocks/data/userdata';
+import postsDataMock from '@/mocks/data/postsdata';
 
 const MyPage: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false); // 수정 상태 관리
   const [activePage, setActivePage] = useState('내 정보');
 
   //유저 데이터
-  const [userData, setUserData] = useState({
-    이름: '김싸피',
-    닉네임: '싸피킴',
-    이메일: 'kim@gmail.com',
-    전화번호: '010-1234-5678',
-    조직: 'SSAFY 12기',
-    기술스택: ['React', 'TypeScript'],
-    희망직무: ['백엔드'],
-  });
+  const [userData, setUserData] = useState(userDataMock);
   // 글 목록 데이터
-  const [posts, setPosts] = useState([
-    {
-      profileImage: '/default-profile.png',
-      nickname: '싸피킴',
-      tier: 'gold' as Tier,
-      title: '제목1',
-      content: '글 내용1',
-      views: 123,
-      likes: 45,
-      comments: 10,
-      timestamp: '2시간 전',
-    },
-    {
-      profileImage: '/default-profile.png',
-      nickname: '김싸피',
-      tier: 'silver' as Tier,
-      title: '제목2',
-      content: '글 내용2',
-      views: 89,
-      likes: 22,
-      comments: 5,
-      timestamp: '1일 전',
-    },
-  ]);
+  const [posts, setPosts] = useState(postsDataMock);
   //사이드바 목록
   const sidebarSections = [
     {
@@ -87,7 +58,7 @@ const MyPage: React.FC = () => {
     }  else if (activePage === '내가 작성한 글') {
       return (
         <div>
-          <h2 className='mb-4 text-2xl font-bold text-gray-800'>내가 작성한 글</h2>
+          <h2 className='mb-4 text-2xl font-bold'>내가 작성한 글</h2>
           {posts.map((post, index) => (
             <PostCard key={index} {...post} />
           ))}
@@ -96,7 +67,7 @@ const MyPage: React.FC = () => {
     } else if (activePage === '스크랩한 공고') {
       return (
         <div>
-          <h2 className='mb-4 text-2xl font-bold text-gray-800'>스크랩한 공고</h2>
+          <h2 className='mb-4 text-2xl font-bold'>스크랩한 공고</h2>
           {posts.map((post, index) => (
             <PostCard key={index} {...post} />
           ))}
@@ -105,7 +76,7 @@ const MyPage: React.FC = () => {
     } else if (activePage === '스크랩한 글') {
       return (
         <div>
-          <h2 className='mb-4 text-2xl font-bold text-gray-800'>스크랩한 글</h2>
+          <h2 className='mb-4 text-2xl font-bold'>스크랩한 글</h2>
           {posts.map((post, index) => (
             <PostCard key={index} {...post} />
           ))}
