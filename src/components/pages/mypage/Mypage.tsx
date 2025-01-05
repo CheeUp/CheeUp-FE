@@ -11,10 +11,11 @@ const MyPage: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false); // 수정 상태 관리
   const [activePage, setActivePage] = useState('내 정보');
 
-  //유저 데이터
+
   const [userData, setUserData] = useState(userDataMock);
-  // 글 목록 데이터
+
   const [posts, setPosts] = useState(postsDataMock);
+
   //사이드바 목록
   const sidebarSections = [
     {
@@ -91,7 +92,7 @@ const MyPage: React.FC = () => {
       <div className='flex w-4/5 max-w-screen-lg bg-background pt-8'>
         {/* 왼쪽 영역: 사이드바와 유저 카드 */}
         <div>
-          <UserInfoCard profileImage='../../assets/temp.jpg' nickname='김사용' tier='Gold' level={40} exp={75} />
+          <UserInfoCard profileImage='../../assets/temp.jpg' nickname='김사용' tier='gold' level={40} exp={75} />
           <Sidebar
             sections={sidebarSections}
             onItemClick={(item) => {
