@@ -1,10 +1,10 @@
 import TechBadge from '@/components/ui/badge/TechBadge';
 import { DownArrowIcon } from '@/components/ui/icons/ArrowIcon';
-import { TJotDescription } from '@/model/recruit';
+import { TJobDescription } from '@/model/recruit';
 import { useState } from 'react';
 
 interface PJobDescription {
-  jobDescription: TJotDescription;
+  jobDescription: TJobDescription;
 }
 
 const JobDescription: React.FC<PJobDescription> = ({

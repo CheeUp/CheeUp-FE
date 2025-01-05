@@ -4,7 +4,7 @@ import React from 'react';
 interface UserInfoCardProps {
   profileImage: string;
   nickname: string;
-  tier: string;
+  tier: String;
   level: number;
   exp: number;
 }
@@ -28,11 +28,11 @@ const UserInfoCard: React.FC<UserInfoCardProps> = ({ profileImage, nickname, tie
       <div className='flex w-full items-center gap-2'>
         {/* 경험치 바 */}
         <div className='h-4 w-full rounded-full bg-white'>
-          <div className='h-4 rounded-full bg-blue-700' style={{ width: `${exp}%` }}></div>
+          <div className='h-4 rounded-full bg-primary' style={{ width: `${exp}%` }}></div>
         </div>
 
         {/* 현재 경험치 텍스트 */}
-        <span className='text-sm font-medium text-white'>{`${exp}%`}</span>
+        <span className='text-sm  text-white'>{`${exp}%`}</span>
       </div>
     </div>
   );

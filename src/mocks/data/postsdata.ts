@@ -1,10 +1,10 @@
-import { Tier } from '@/components/ui/post/PostCard';
+import { TTier } from "@/model/tier";
 
 const postsData = [
   {
     profileImage: '/default-profile.png',
     nickname: '싸피킴',
-    tier: 'gold' as Tier,
+    tier: 'gold' as TTier,
     title: '제목1',
     content: '글 내용1',
     views: 123,
@@ -15,7 +15,7 @@ const postsData = [
   {
     profileImage: '/default-profile.png',
     nickname: '김싸피',
-    tier: 'silver' as Tier,
+    tier: 'silver' as TTier,
     title: '제목2',
     content: '글 내용2',
     views: 89,
