@@ -5,6 +5,7 @@ import ProfileEditForm from '@/components/mypage/ProFileEditForm';
 import ProfileView from '@/components/mypage/ProFileView';
 const MyPage: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false); // 수정 상태 관리
+  const [activeItem, setActiveItem] = useState('내 정보');
 
   const [userData, setUserData] = useState({
     이름: '김싸피',
@@ -44,13 +45,21 @@ const MyPage: React.FC = () => {
     }
   };
 
+  const handleSidebarItemClick = (item: string) => {
+    setActiveItem(item);
+  };
+
   return (
     <div className='flex h-full items-start justify-center bg-background'>
       <div className='flex w-4/5 max-w-screen-lg bg-background pt-8'>
         {/* 왼쪽 영역: 사이드바와 유저 카드 */}
         <div>
           <UserInfoCard profileImage='../../assets/temp.jpg' nickname='김사용' tier='Gold' level={40} exp={75} />
-          <Sidebar sections={sidebarSections} />
+          <Sidebar
+            sections={sidebarSections}
+            activeItem={activeItem}
+            onItemClick={handleSidebarItemClick}
+          />
         </div>
 
         {/* 오른쪽 영역: 유저 폼 */}
