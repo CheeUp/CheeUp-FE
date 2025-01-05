@@ -3,13 +3,13 @@ import Sidebar from '@/components/layout/Sidebar';
 import UserInfoCard from '@/components/mypage/UserInfoCard';
 import ProfileEditForm from '@/components/mypage/ProFileEditForm';
 import ProfileView from '@/components/mypage/ProFileView';
-import PostCard, {type Tier} from '@/components/ui/post/PostCard';
+import PostCard from '@/components/ui/post/PostCard';
 import userDataMock from '@/mocks/data/userdata';
 import postsDataMock from '@/mocks/data/postsdata';
 
 const MyPage: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false); // 수정 상태 관리
-  const [activePage, setActivePage] = useState('내 정보');
+  const [activeItem, setActiveItem] = useState('내 정보');
 
 
   const [userData, setUserData] = useState(userDataMock);
@@ -45,8 +45,12 @@ const MyPage: React.FC = () => {
     }
   };
 
+  const handleSidebarItemClick = (item: string) => {
+    setActiveItem(item);
+  };
+
   const renderContent = () => {
-    if (activePage === '내 정보') {
+    if (activeItem === '내 정보') {
       return isEditing ? (
         <ProfileEditForm
           initialValues={userData}
@@ -56,7 +60,7 @@ const MyPage: React.FC = () => {
       ) : (
         <ProfileView user={userData} onEdit={() => setIsEditing(true)} onDelete={handleDelete} />
       );
-    }  else if (activePage === '내가 작성한 글') {
+    } else if (activeItem === '내가 작성한 글') {
       return (
         <div>
           <h2 className='mb-4 text-2xl font-bold'>내가 작성한 글</h2>
@@ -65,7 +69,7 @@ const MyPage: React.FC = () => {
           ))}
         </div>
       );
-    } else if (activePage === '스크랩한 공고') {
+    } else if (activeItem === '스크랩한 공고') {
       return (
         <div>
           <h2 className='mb-4 text-2xl font-bold'>스크랩한 공고</h2>
@@ -74,7 +78,7 @@ const MyPage: React.FC = () => {
           ))}
         </div>
       );
-    } else if (activePage === '스크랩한 글') {
+    } else if (activeItem === '스크랩한 글') {
       return (
         <div>
           <h2 className='mb-4 text-2xl font-bold'>스크랩한 글</h2>
@@ -95,9 +99,8 @@ const MyPage: React.FC = () => {
           <UserInfoCard profileImage='../../assets/temp.jpg' nickname='김사용' tier='gold' level={40} exp={75} />
           <Sidebar
             sections={sidebarSections}
-            onItemClick={(item) => {
-              setActivePage(item);
-            }}
+            activeItem={activeItem} // 활성화된 항목
+            onItemClick={handleSidebarItemClick} // 클릭 핸들러
           />
         </div>
 
