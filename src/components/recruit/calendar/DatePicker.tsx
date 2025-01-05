@@ -7,11 +7,14 @@ interface PDatePicker {
   placeholder: string;
   value: Date | null;
   id?: string;
-  setDate?: React.Dispatch<React.SetStateAction<Date | null>>;
+  setDate?: (date: Date) => void;
   startDate?: Date | null;
+  isStartDate?: boolean;
+  time?: string;
+  setTime?: (time: string) => void;
 }
 
-const DatePicker: React.FC<PDatePicker> = ({ placeholder, value, id, setDate, startDate }) => {
+const DatePicker: React.FC<PDatePicker> = ({ placeholder, value, id, time, ...props }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const ref = useClickOutsideRef<HTMLDivElement>(() => setIsOpen(false));
@@ -23,14 +26,14 @@ const DatePicker: React.FC<PDatePicker> = ({ placeholder, value, id, setDate, st
         className='flex w-full items-center gap-2 rounded-sm border border-input px-4 py-2.5 text-body2 focus:outline-activate'
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <p className={`flex-grow text-start ${value ? '' : 'text-disabled'}`}>
-          {value ? `${value.getFullYear()}. ${value.getMonth() + 1}. ${value.getDate()}` : placeholder}
+        <p className={`flex-grow whitespace-pre text-start ${value ? '' : 'text-disabled'}`}>
+          {value ? `${value.getFullYear()}. ${value.getMonth() + 1}. ${value.getDate()}   ${time}` : placeholder}
         </p>
         <CalendarIcon />
       </button>
       {isOpen && (
         <div className='absolute right-0 top-12 z-10'>
-          <SmallCalendar selectedDate={value} setDate={setDate} startDate={startDate} />
+          <SmallCalendar selectedDate={value} time={time} {...props} />
         </div>
       )}
     </div>
