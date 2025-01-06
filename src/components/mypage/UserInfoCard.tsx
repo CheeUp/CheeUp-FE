@@ -1,10 +1,12 @@
 import { Avatar } from '@/components/ui/Avatar';
 import React from 'react';
+import Tier from '@/components/ui/Tier';
+import { TTier } from '@/model/tier';
 
 interface UserInfoCardProps {
   profileImage: string;
   nickname: string;
-  tier: String;
+  tier: TTier;
   level: number;
   exp: number;
 }
@@ -21,7 +23,7 @@ const UserInfoCard: React.FC<UserInfoCardProps> = ({ profileImage, nickname, tie
         {/* 닉네임, 티어 */}
         <div className='flex items-center gap-2'>
           <p className='text-lg font-bold'>{nickname}</p>
-          <p className='text-sm'>{tier}</p>
+          <Tier tier={tier} tierNum={2} />
         </div>
       </div>
       {/* 경험치 바와 현재 경험치 텍스트 */}

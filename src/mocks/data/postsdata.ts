@@ -2,7 +2,7 @@ import { TTier } from "@/model/tier";
 
 const postsData = [
   {
-    profileImage: '/default-profile.png',
+    profileImage: 'temp.jpg',
     nickname: '싸피킴',
     tier: 'gold' as TTier,
     title: '제목1',
@@ -13,7 +13,7 @@ const postsData = [
     timestamp: '2시간 전',
   },
   {
-    profileImage: '/default-profile.png',
+    profileImage: 'temp.jpg',
     nickname: '김싸피',
     tier: 'silver' as TTier,
     title: '제목2',
