@@ -78,19 +78,24 @@ export default {
         activate: 'var(--border-activate)',
       },
       borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 4px)`,
-        sm: `calc(var(--radius) - 8px)`,
+        xl: 'calc(var(--radius) + 0.75rem)',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 0.25rem)',
+        sm: 'calc(var(--radius) - 0.5rem)',
       },
       outlineColor: {
         activate: 'var(--border-activate)',
       },
       backgroundColor: {
         background: 'var(--background)',
+        deepgray: 'var(--background-deepgray)',
         modal: 'var(--modal-background)',
       },
       width: {
         base: 'var(--width-base)',
+      },
+      dropShadow: {
+        modal: 'var(--shadow-modal)',
       },
     },
     fontFamily: {

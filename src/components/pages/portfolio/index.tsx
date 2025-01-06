@@ -4,7 +4,7 @@ import TextInput from '@/components/ui/input/TextInput';
 import { PortfolioCard } from '@/components/portfolio/PortfolioCard';
 import PortfolioSideBar from '@/components/layout/portfolio/PortfolioSideBar';
 import useTextInput from '@/hooks/useTextInput';
-import { MportfolioData } from '@/mocks/data/portfolio';
+import { MportfolioInfos } from '@/mocks/data/portfolio';
 
 const PortfolioPage: React.FC = () => {
   const [searchText, setSearchText] = useTextInput('');
@@ -23,7 +23,7 @@ const PortfolioPage: React.FC = () => {
             </div>
 
             <div className='flex flex-wrap gap-4'>
-              {MportfolioData.map((info, index) => (
+              {MportfolioInfos.map((info, index) => (
                 <PortfolioCard key={index} portfolioInfo={info} />
               ))}
             </div>
@@ -41,7 +41,7 @@ const PortfolioPage: React.FC = () => {
             </div>
 
             <div className='flex flex-wrap gap-4'>
-              {MportfolioData.map((info, index) => (
+              {MportfolioInfos.map((info, index) => (
                 <PortfolioCard key={index} portfolioInfo={info} />
               ))}
             </div>

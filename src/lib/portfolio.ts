@@ -1,6 +1,14 @@
 import { TStepItem } from '@/model/portfolio';
 
-export const PortfolioStepList: TStepItem[] = [
+export const militaryList = ['군필', '미필', '면제', '해당없음'] as const;
+
+export const militaryBranchList = ['육군', '해군', '공군', '해병', '전경', '의경', '공익', '기타'] as const;
+
+export const militaryRankList = ['이병', '일병', '상병', '병장', '소위', '중위', '대위'] as const;
+
+export const disabilityGradeList = ['중증', '경증', '1급', '2급', '3급', '4급', '5급', '6급'] as const;
+
+export const portfolioStepList: TStepItem[] = [
   {
     id: 1,
     title: '기본 정보',

@@ -1,30 +1,26 @@
-import React, { useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import React from 'react';
 import Button from '@/components/ui/button/Button';
 import { H1 } from '@/components/ui/typography/Heading';
 import { StepperWithText } from '@/components/ui/stepper/StepperWithText';
 import BasicInfoForm from '@/components/portfolio/forms/BasicInfoForm';
+import PersonalInfoForm from '@/components/portfolio/forms/PersonalInfoForm';
 import useStepper from '@/hooks/useStepper';
-import { PortfolioStepList } from '@/lib/portfolio';
+import { portfolioStepList } from '@/lib/portfolio';
 
 const NewPortfolioPage: React.FC = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const step = Number(searchParams.get('step'));
-
-  useEffect(() => {
-    if (isNaN(step) || step <= 0 || step > PortfolioStepList.length) {
-      navigate('/portfolio/new?step=1');
-    }
-  }, [step, navigate]);
-
-  const { currentStep, stepList, goToNextStep } = useStepper(step, PortfolioStepList);
+  const { currentStep, stepList, goToNextStep } = useStepper(portfolioStepList);
 
   const renderForm = () => {
-    switch (step) {
+    switch (currentStep) {
       case 1:
         return <BasicInfoForm />;
+      case 2:
+        return <PersonalInfoForm />;
     }
+  };
+
+  const handleNextBtnClick = () => {
+    goToNextStep();
   };
 
   return (
@@ -44,7 +40,7 @@ const NewPortfolioPage: React.FC = () => {
             {renderForm()}
 
             <div className='flex justify-end'>
-              <Button onClick={() => {}}>다음</Button>
+              <Button onClick={handleNextBtnClick}>다음</Button>
             </div>
           </div>
         </div>
