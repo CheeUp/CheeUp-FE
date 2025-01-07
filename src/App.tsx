@@ -1,7 +1,7 @@
 import Header from '@/components/layout/Header';
 import RecruitPage from '@/components/pages/recruit';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MyPage from '@/components/pages/mypage/Mypage';
+import MyPage from '@/components/pages/mypage';
 import PortfolioPage from '@/components/pages/portfolio';
 import NewPortfolioPage from '@/components/pages/portfolio/new';
 import NewRecruitPage from '@/components/pages/recruit/new';
@@ -16,12 +16,12 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path='/' element={<h1>Home</h1>} />
-        <Route path="mypage" element={<MyPage />}>
+        <Route path='mypage' element={<MyPage />}>
           <Route index element={<ProfileView />} />
-          <Route path="profile" element={<ProfileView />} />
-          <Route path="edit" element={<ProfileEditForm />} />
-          <Route path="posts" element={<MyPostList />} />
-          <Route path="scrap" element={<ScrapList />} />
+          <Route path='profile' element={<ProfileView />} />
+          <Route path='edit' element={<ProfileEditForm />} />
+          <Route path='posts' element={<MyPostList />} />
+          <Route path='scrap' element={<ScrapList />} />
         </Route>
         <Route path='/recruit'>
           <Route index element={<RecruitPage />} />

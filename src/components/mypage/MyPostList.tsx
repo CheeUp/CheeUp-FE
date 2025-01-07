@@ -4,7 +4,7 @@ import postsDataMock from '@/mocks/data/postsdata';
 
 const MyPostList: React.FC = () => (
   <div>
-    <h2 className="mb-4 text-2xl font-bold">내가 작성한 글</h2>
+    <h2 className='mb-4 text-2xl font-bold'>내가 작성한 글</h2>
     {postsDataMock.map((post, index) => (
       <PostCard key={index} {...post} />
     ))}

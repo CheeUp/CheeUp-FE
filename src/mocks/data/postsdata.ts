@@ -1,4 +1,4 @@
-import { TTier } from "@/model/tier";
+import { TTier } from '@/model/tier';
 
 const postsData = [
   {
