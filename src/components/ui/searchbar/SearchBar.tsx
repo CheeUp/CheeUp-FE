@@ -5,9 +5,10 @@ const SearchBar: React.FC<{
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: () => void;
-}> = ({ value, onChange, onSearch }) => {
+  className?: string;
+}> = ({ value, onChange, onSearch, className = '' }) => {
   return (
-    <div className='relative flex items-center'>
+    <div className={`relative flex items-center ${className}`}>
       {/* 입력 필드 */}
       <input
         type='text'
