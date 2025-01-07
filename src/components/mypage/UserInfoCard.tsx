@@ -18,7 +18,7 @@ const UserInfoCard: React.FC<UserInfoCardProps> = ({ profileImage, nickname, tie
         <Avatar src={profileImage} size='sm' />
         {/* 닉네임, 티어 */}
         <div className='flex items-center gap-2'>
-          <p className='text-lg font-bold text-white'>{nickname}</p>
+          <p className='text-sm font-bold text-white'>{nickname}</p>
           <Tier tier={tier} tierNum={2} />
         </div>
       </div>
