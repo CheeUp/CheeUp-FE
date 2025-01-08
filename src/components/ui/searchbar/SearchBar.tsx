@@ -15,7 +15,8 @@ const SearchBar: React.FC<{
         value={value}
         onChange={onChange}
         placeholder='기술 스택 검색'
-        className='w-full rounded-full border border-blue-400 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
+        className={`w-full ${className ? '' : 'rounded-full border border-blue-400 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
+          }`}
       />
       {/* 커스텀 검색 아이콘 */}
       <button

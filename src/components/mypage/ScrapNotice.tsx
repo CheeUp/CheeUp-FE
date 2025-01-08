@@ -39,7 +39,7 @@ const ScrapNotice: React.FC = () => {
                             value=""
                             onChange={(e) => { }}
                             onSearch={() => { }}
-                            className=' rounded-md border border-gray-300 focus-within:ring-2 focus-within:ring-blue-400'
+                            className=' rounded-md border border-blue-300 px-4 py-2 mt-2 focus-within:ring-2 focus-within:ring-blue-400'
                         />
                     </div>
                     <div className='w-1/4 '>
