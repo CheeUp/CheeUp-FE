@@ -22,7 +22,7 @@ const App: React.FC = () => {
           <Route path='edit' element={<ProfileEditForm />} />
           <Route path='posts' element={<MyPostList />} />
           <Route path='scrap' element={<ScrapList />} />
-          <Route path="scrap-notice" element={<ScrapNotice />} />
+          <Route path='scrap-notice' element={<ScrapNotice />} />
         </Route>
         <Route path='/recruit'>
           <Route index element={<RecruitPage />} />

@@ -5,8 +5,9 @@ const SearchBar: React.FC<{
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: () => void;
+  placeholder?: string;
   className?: string;
-}> = ({ value, onChange, onSearch, className = '' }) => {
+}> = ({ value, onChange, onSearch, placeholder = '기술 스택 검색', className = '' }) => {
   return (
     <div className={`relative flex items-center ${className}`}>
       {/* 입력 필드 */}
@@ -14,8 +15,10 @@ const SearchBar: React.FC<{
         type='text'
         value={value}
         onChange={onChange}
-        placeholder='기술 스택 검색'
-        className={`w-full ${className ? '' : 'rounded-full border border-blue-400 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
+        placeholder={placeholder}
+        className={`w-full ${className
+          ? ''
+          : 'rounded-full border border-blue-400 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
           }`}
       />
       {/* 커스텀 검색 아이콘 */}

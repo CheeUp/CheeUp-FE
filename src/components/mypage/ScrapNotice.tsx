@@ -29,52 +29,55 @@ const ScrapNotice: React.FC = () => {
     return (
         <div>
             <div>
-                <h2 className="text-2xl font-bold mb-4">스크랩한 공고</h2>
+                <h2 className='mb-4 text-2xl font-bold'>스크랩한 공고</h2>
             </div>
-            <div className="p-4 bg-white border">
+            <div className='border bg-white p-4'>
                 {/* 검색 및 필터링 */}
-                <div className="flex gap-4 mb-4">
-                    <div className='w-3/4 '>
+                <div className='mb-4 flex gap-4'>
+                    <div className='w-3/4'>
                         <SearchBar
-                            value=""
+                            value=''
                             onChange={(e) => { }}
                             onSearch={() => { }}
-                            className=' rounded-md border border-blue-300 px-4 py-2 mt-2 focus-within:ring-2 focus-within:ring-blue-400'
+                            placeholder='스크랩한 공고를 입력하세요'
+                            className='mt-2 rounded-md border border-blue-300 px-4 py-2 focus-within:ring-2 focus-within:ring-blue-400'
                         />
                     </div>
-                    <div className='w-1/4 '>
+                    <div className='w-1/4'>
                         <Dropdown
-                            placeholder="모집 상태 선택"
+                            placeholder='모집 상태 선택'
                             options={['모집중', '모집완료', '모집예정']}
                             selected={selectedStatus}
                             setSelected={setSelectedStatus}
                         />
                     </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{selectedStatus}</h3>
+                <h3 className='mb-4 text-2xl font-bold'>{selectedStatus}</h3>
                 {/* 필터링된 데이터 테이블 */}
-                <table className="w-full border-collapse  rounded-sm border border-gray-300">
-                    <thead>
-                        <tr className="bg-gray-100">
-                            <th className="border border-gray-300 px-4 py-2">공고명</th>
-                            <th className="border border-gray-300 px-4 py-2">기업명</th>
-                            <th className="border border-gray-300 px-4 py-2">시작 날짜</th>
-                            <th className="border border-gray-300 px-4 py-2">종료 날짜</th>
-                            <th className="border border-gray-300 px-4 py-2">상태</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredData.map((recruit) => (
-                            <tr key={recruit.id} className="text-center">
-                                <td className="border border-gray-300 px-4 py-2">2024년 하반기 {recruit.company} 채용</td>
-                                <td className="border border-gray-300 px-4 py-2">{recruit.company}</td>
-                                <td className="border border-gray-300 px-4 py-2">{recruit.startDate.toLocaleDateString()}</td>
-                                <td className="border border-gray-300 px-4 py-2">{recruit.endDate.toLocaleDateString()}</td>
-                                <td className="border border-gray-300 px-4 py-2">{getStatus(recruit.startDate, recruit.endDate)}</td>
+                <div className='overflow-hidden rounded-sm border border-gray-300'>
+                    <table className='w-full border-collapse rounded-sm border border-gray-300'>
+                        <thead>
+                            <tr className='bg-gray-100'>
+                                <th className='border border-gray-300 px-4 py-2'>공고명</th>
+                                <th className='border border-gray-300 px-4 py-2'>기업명</th>
+                                <th className='border border-gray-300 px-4 py-2'>시작 날짜</th>
+                                <th className='border border-gray-300 px-4 py-2'>종료 날짜</th>
+                                <th className='border border-gray-300 px-4 py-2'>상태</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {filteredData.map((recruit) => (
+                                <tr key={recruit.id} className='text-center'>
+                                    <td className='border border-gray-300 px-4 py-2'>2024년 하반기 {recruit.company} 채용</td>
+                                    <td className='border border-gray-300 px-4 py-2'>{recruit.company}</td>
+                                    <td className='border border-gray-300 px-4 py-2'>{recruit.startDate.toLocaleDateString()}</td>
+                                    <td className='border border-gray-300 px-4 py-2'>{recruit.endDate.toLocaleDateString()}</td>
+                                    <td className='border border-gray-300 px-4 py-2'>{getStatus(recruit.startDate, recruit.endDate)}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

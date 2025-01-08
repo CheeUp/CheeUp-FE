@@ -52,7 +52,7 @@ const ProfileView: React.FC = () => {
               <label className='mb-2 block text-sm text-deepgray'>{key}</label>
               <TextInput
                 value={(userData as any)[key]}
-                onChange={() => { }}
+                onChange={() => {}}
                 placeholder=''
                 disabled
                 className='w-full'
@@ -65,7 +65,7 @@ const ProfileView: React.FC = () => {
           <label className='mb-2 block text-sm text-deepgray'>기술 스택</label>
           <div className='flex flex-wrap gap-2'>
             {userData.기술스택.map((stack) => (
-              <Button key={stack} type='filled' onClick={() => { }} className='cursor-default'>
+              <Button key={stack} type='filled' onClick={() => {}} className='cursor-default'>
                 {stack}
               </Button>
             ))}
@@ -77,7 +77,7 @@ const ProfileView: React.FC = () => {
           <label className='mb-2 block text-sm text-deepgray'>희망 직무</label>
           <div className='flex flex-wrap gap-2'>
             {userData.희망직무.map((job) => (
-              <Button key={job} type='filled' onClick={() => { }} className='cursor-default'>
+              <Button key={job} type='filled' onClick={() => {}} className='cursor-default'>
                 {job}
               </Button>
             ))}
