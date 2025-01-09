@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MyPage from '@/components/pages/mypage';
 import PortfolioPage from '@/components/pages/portfolio';
 import NewPortfolioPage from '@/components/pages/portfolio/new';
+import NewPostPage from '@/components/pages/community/new';
 import NewRecruitPage from '@/components/pages/recruit/new';
 import ProfileEditForm from '@/components/mypage/ProFileEditForm';
 import ProfileView from '@/components/mypage/ProFileView';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
         </Route>
         <Route path='/portfolio' element={<PortfolioPage />} />
         <Route path='/portfolio/new' element={<NewPortfolioPage />} />
+        <Route path='/community/new' element={<NewPostPage />} />
       </Routes>
     </BrowserRouter>
   );
