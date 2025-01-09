@@ -42,4 +42,15 @@ const DownArrowIcon: React.FC<PArrowIcon> = ({ size = 28, color = '#6F90F4' }) =
   );
 };
 
-export { LeftArrowIcon, RightArrowIcon, UpArrowIcon, DownArrowIcon };
+const RightBottomArrowIcon: React.FC<PArrowIcon> = () => {
+  return (
+    <svg width='23' height='24' viewBox='0 0 23 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <path
+        d='M19.1673 15.832L13.8965 21.1029L12.5357 19.7516L15.4969 16.7904H10.0632C8.41107 16.7904 6.82666 16.1341 5.65846 14.9659C4.49027 13.7977 3.83398 12.2133 3.83398 10.5612V4.33203H5.75065V10.5612C5.75065 12.957 7.66732 14.8737 10.0632 14.8737H15.4969L12.5452 11.9124L13.8965 10.5612L19.1673 15.832Z'
+        fill='#9E9E9E'
+      />
+    </svg>
+  );
+};
+
+export { LeftArrowIcon, RightArrowIcon, UpArrowIcon, DownArrowIcon, RightBottomArrowIcon };
