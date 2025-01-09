@@ -34,7 +34,10 @@ const MyPage: React.FC = () => {
       '/mypage/profile': '내 정보',
       '/mypage/scrap': '스크랩한 글',
       '/mypage/posts': '내가 작성한 글',
+<<<<<<< HEAD
       '/mypage/scrap-notice': '스크랩한 공고',
+=======
+>>>>>>> 1c3378562b56552127521941c3b64a7b1a87e5fa
     };
 
     const newItem = pathToItem[location.pathname] || '내 정보';
@@ -64,9 +67,13 @@ const MyPage: React.FC = () => {
       case '내가 작성한 글':
         navigate('/mypage/posts');
         break;
+<<<<<<< HEAD
       case '스크랩한 공고':
         navigate('/mypage/scrap-notice');
         break;
+=======
+      //나중에 필요한 라우터 추가할 부분
+>>>>>>> 1c3378562b56552127521941c3b64a7b1a87e5fa
       default:
         break;
     }
@@ -97,4 +104,9 @@ const MyPage: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
+=======
+//여기에 아울렛
+
+>>>>>>> 1c3378562b56552127521941c3b64a7b1a87e5fa
 export default MyPage;
