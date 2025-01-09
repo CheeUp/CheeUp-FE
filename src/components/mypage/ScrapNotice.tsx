@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from '@/components/ui/dropdown/Dropdown';
 import SearchBar from '../ui/searchbar/SearchBar';
-import { MRecruitPreview } from '@/mocks/data/recruit';
+import { MRecruitDetail } from '@/mocks/data/recruit';
 
 const getStatus = (startDate: Date, endDate: Date): string => {
     const now = new Date();
@@ -18,10 +18,12 @@ const ScrapNotice: React.FC = () => {
         company: string;
         startDate: Date;
         endDate: Date;
+        title: string;
+        url: string;
         isScraped: boolean;
     }
 
-    const filteredData: Recruit[] = MRecruitPreview.filter((recruit: Recruit) => {
+    const filteredData: Recruit[] = MRecruitDetail.filter((recruit: Recruit) => {
         const status = getStatus(recruit.startDate, recruit.endDate);
         return recruit.isScraped && status === selectedStatus;
     });
@@ -40,7 +42,7 @@ const ScrapNotice: React.FC = () => {
                             onChange={(e) => { }}
                             onSearch={() => { }}
                             placeholder='스크랩한 공고를 입력하세요'
-                            className='mt-2 rounded-md border border-blue-300 px-4 py-2 focus-within:ring-2 focus-within:ring-blue-400'
+                            className='mt-2 rounded-sm border border-blue-300 px-4 py-2 focus-within:ring-2 focus-within:ring-blue-400'
                         />
                     </div>
                     <div className='w-1/4'>
@@ -49,6 +51,7 @@ const ScrapNotice: React.FC = () => {
                             options={['모집중', '모집완료', '모집예정']}
                             selected={selectedStatus}
                             setSelected={setSelectedStatus}
+                            className='flex w-full items-center gap-2 rounded-sm border border-blue-300  mt-2 px-4 py-0.5 focus:outline-activate'
                         />
                     </div>
                 </div>
@@ -62,17 +65,26 @@ const ScrapNotice: React.FC = () => {
                                 <th className='border border-gray-300 px-4 py-2'>기업명</th>
                                 <th className='border border-gray-300 px-4 py-2'>시작 날짜</th>
                                 <th className='border border-gray-300 px-4 py-2'>종료 날짜</th>
-                                <th className='border border-gray-300 px-4 py-2'>상태</th>
+                                <th className='border border-gray-300 px-4 py-2'>채용 사이트 링크</th>
                             </tr>
                         </thead>
                         <tbody>
                             {filteredData.map((recruit) => (
                                 <tr key={recruit.id} className='text-center'>
-                                    <td className='border border-gray-300 px-4 py-2'>2024년 하반기 {recruit.company} 채용</td>
+                                    <td className='border border-gray-300 px-4 py-2'>{recruit.title}</td>
                                     <td className='border border-gray-300 px-4 py-2'>{recruit.company}</td>
                                     <td className='border border-gray-300 px-4 py-2'>{recruit.startDate.toLocaleDateString()}</td>
                                     <td className='border border-gray-300 px-4 py-2'>{recruit.endDate.toLocaleDateString()}</td>
-                                    <td className='border border-gray-300 px-4 py-2'>{getStatus(recruit.startDate, recruit.endDate)}</td>
+                                    <td className='border border-gray-300 px-4 py-2'>
+                                        <a
+                                            href={recruit.url}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            className='text-blue-500 underline hover:underline'
+                                        >
+                                            링크 이동
+                                        </a>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
