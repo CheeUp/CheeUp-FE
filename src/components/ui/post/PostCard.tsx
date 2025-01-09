@@ -44,5 +44,4 @@ const PostCard: React.FC<TPostCard> = ({
     </div>
   );
 };
-
 export default PostCard;
