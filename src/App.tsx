@@ -9,11 +9,7 @@ import ProfileEditForm from '@/components/mypage/ProFileEditForm';
 import ProfileView from '@/components/mypage/ProFileView';
 import MyPostList from '@/components/mypage/MyPostList';
 import ScrapList from '@/components/mypage/ScrapList';
-<<<<<<< HEAD
 import ScrapNotice from '@/components/mypage/ScrapNotice';
-=======
-
->>>>>>> 1c3378562b56552127521941c3b64a7b1a87e5fa
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -26,10 +22,7 @@ const App: React.FC = () => {
           <Route path='edit' element={<ProfileEditForm />} />
           <Route path='posts' element={<MyPostList />} />
           <Route path='scrap' element={<ScrapList />} />
-<<<<<<< HEAD
           <Route path='scrap-notice' element={<ScrapNotice />} />
-=======
->>>>>>> 1c3378562b56552127521941c3b64a7b1a87e5fa
         </Route>
         <Route path='/recruit'>
           <Route index element={<RecruitPage />} />
