@@ -14,6 +14,8 @@ export interface TRecruitDetail extends TRecruitPreview {
   jobDescriptions: TJobDescription[];
 }
 
+export type TRecruitNotice = Omit < TRecruitDetail,  'isLiked' | 'jobNoticeFiles' | 'jobDescriptions'>
+
 export interface TJobDescription {
   id: number;
   type: '신입' | '경력';

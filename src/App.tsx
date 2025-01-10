@@ -9,7 +9,7 @@ import ProfileEditForm from '@/components/mypage/ProFileEditForm';
 import ProfileView from '@/components/mypage/ProFileView';
 import MyPostList from '@/components/mypage/MyPostList';
 import ScrapList from '@/components/mypage/ScrapList';
-
+import ScrapNotice from '@/components/mypage/ScrapNotice';
 const App: React.FC = () => {
   return (
     <BrowserRouter>
@@ -22,6 +22,7 @@ const App: React.FC = () => {
           <Route path='edit' element={<ProfileEditForm />} />
           <Route path='posts' element={<MyPostList />} />
           <Route path='scrap' element={<ScrapList />} />
+          <Route path='scrap-notice' element={<ScrapNotice />} />
         </Route>
         <Route path='/recruit'>
           <Route index element={<RecruitPage />} />
