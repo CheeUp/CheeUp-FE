@@ -8,18 +8,16 @@ const SearchBar: React.FC<{
   placeholder?: string;
   className?: string;
 }> = ({ value, onChange, onSearch, placeholder = '기술 스택 검색', className = '' }) => {
+  const defaultClassName = 'rounded-full border border-blue-400 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400';
   return (
-    <div className={`relative flex items-center ${className}`}>
+    <div className={`relative flex items-center ${className ? className : defaultClassName}`}>
       {/* 입력 필드 */}
       <input
         type='text'
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`w-full ${className
-          ? ''
-          : 'rounded-full border border-blue-400 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
-          }`}
+        className="flex-grow bg-transparent outline-none"
       />
       {/* 커스텀 검색 아이콘 */}
       <button

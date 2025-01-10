@@ -2,31 +2,33 @@ import React, { useState } from 'react';
 import Dropdown from '@/components/ui/dropdown/Dropdown';
 import SearchBar from '../ui/searchbar/SearchBar';
 import { MRecruitDetail } from '@/mocks/data/recruit';
+import { TRecruitNotice } from '@/model/recruit';
 
-const getStatus = (startDate: Date, endDate: Date): string => {
-    const now = new Date();
-    if (now < startDate) return '모집예정';
-    if (now >= startDate && now <= endDate) return '모집중';
-    return '모집완료';
-};
+const TABLE_CELL_CLASSNAME = 'px-4 py-2';
 
 const ScrapNotice: React.FC = () => {
     const [selectedStatus, setSelectedStatus] = useState<string>('모집중');
 
-    interface Recruit {
-        id: number;
-        company: string;
-        startDate: Date;
-        endDate: Date;
-        title: string;
-        url: string;
-        isScraped: boolean;
-    }
+    const getStatus = (startDate: Date, endDate: Date): string => {
+        const now = new Date();
+        if (now < startDate) return '모집예정';
+        if (now >= startDate && now <= endDate) return '모집중';
+        return '모집완료';
+    };
 
-    const filteredData: Recruit[] = MRecruitDetail.filter((recruit: Recruit) => {
+    
+    const filteredData: TRecruitNotice[] = MRecruitDetail.filter((recruit) => {
         const status = getStatus(recruit.startDate, recruit.endDate);
         return recruit.isScraped && status === selectedStatus;
-    });
+    }).map((recruit) => ({
+        id: recruit.id,
+        company: recruit.company,
+        startDate: recruit.startDate,
+        endDate: recruit.endDate,
+        title: recruit.title,
+        url: recruit.url,
+        isScraped: recruit.isScraped,
+    }));
 
     return (
         <div>
@@ -60,22 +62,22 @@ const ScrapNotice: React.FC = () => {
                 <div className='overflow-hidden rounded-sm border border-gray-300'>
                     <table className='w-full border-collapse rounded-sm border border-gray-300'>
                         <thead>
-                            <tr className='bg-gray-100'>
-                                <th className='border border-gray-300 px-4 py-2'>공고명</th>
-                                <th className='border border-gray-300 px-4 py-2'>기업명</th>
-                                <th className='border border-gray-300 px-4 py-2'>시작 날짜</th>
-                                <th className='border border-gray-300 px-4 py-2'>종료 날짜</th>
-                                <th className='border border-gray-300 px-4 py-2'>채용 사이트 링크</th>
+                            <tr className='bg-gray-100 divide-x divide-gray-300'>
+                                <th className={TABLE_CELL_CLASSNAME}>공고명</th>
+                                <th className={TABLE_CELL_CLASSNAME}>기업명</th>
+                                <th className={TABLE_CELL_CLASSNAME}>시작 날짜</th>
+                                <th className={TABLE_CELL_CLASSNAME}>종료 날짜</th>
+                                <th className={TABLE_CELL_CLASSNAME}>채용 사이트 링크</th>
                             </tr>
                         </thead>
                         <tbody>
                             {filteredData.map((recruit) => (
-                                <tr key={recruit.id} className='text-center'>
-                                    <td className='border border-gray-300 px-4 py-2'>{recruit.title}</td>
-                                    <td className='border border-gray-300 px-4 py-2'>{recruit.company}</td>
-                                    <td className='border border-gray-300 px-4 py-2'>{recruit.startDate.toLocaleDateString()}</td>
-                                    <td className='border border-gray-300 px-4 py-2'>{recruit.endDate.toLocaleDateString()}</td>
-                                    <td className='border border-gray-300 px-4 py-2'>
+                                <tr key={recruit.id} className='text-center divide-x divide-gray-300'>
+                                    <td className={TABLE_CELL_CLASSNAME}>{recruit.title}</td>
+                                    <td className={TABLE_CELL_CLASSNAME}>{recruit.company}</td>
+                                    <td className={TABLE_CELL_CLASSNAME}>{recruit.startDate.toLocaleDateString()}</td>
+                                    <td className={TABLE_CELL_CLASSNAME}>{recruit.endDate.toLocaleDateString()}</td>
+                                    <td className={TABLE_CELL_CLASSNAME}>
                                         <a
                                             href={recruit.url}
                                             target='_blank'

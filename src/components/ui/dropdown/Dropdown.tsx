@@ -24,7 +24,7 @@ const Dropdown: React.FC<PDropdown> = ({ placeholder, options, selected, setSele
   const defaultClassName = 'flex w-full items-center gap-2 rounded-sm border border-input px-4 py-2.5 text-body2 focus:outline-activate';
 
   return (
-    <div className={` flex relative w-full`} ref={ref}>
+    <div className={`relative w-full`} ref={ref}>
       <button
         id={id}
         className={className ? className : defaultClassName}
