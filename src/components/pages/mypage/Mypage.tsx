@@ -5,7 +5,6 @@ import UserInfoCard from '@/components/mypage/UserInfoCard';
 import userDataMock from '@/mocks/data/userdata';
 import postsDataMock from '@/mocks/data/postsdata';
 
-
 const MyPage: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false); // 수정 상태 관리
   const [activeItem, setActiveItem] = useState('내 정보');
@@ -69,8 +68,6 @@ const MyPage: React.FC = () => {
         break;
     }
   };
-
-
 
   return (
     <div className='flex h-full items-start justify-center bg-background'>

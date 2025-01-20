@@ -34,7 +34,7 @@ const UserInfoCard: React.FC<UserInfoCardProps> = ({ profileImage, nickname, tie
         </div>
 
         {/* 현재 경험치 텍스트 */}
-        <span className='text-sm  text-white'>{`${exp}%`}</span>
+        <span className='text-sm text-white'>{`${exp}%`}</span>
       </div>
     </div>
   );

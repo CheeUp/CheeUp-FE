@@ -16,12 +16,12 @@ const App: React.FC = () => {
       <Header />
       <Routes>
         <Route path='/' element={<h1>Home</h1>} />
-        <Route path="mypage" element={<MyPage />}>
+        <Route path='mypage' element={<MyPage />}>
           <Route index element={<ProfileView />} />
-          <Route path="profile" element={<ProfileView />} />
-          <Route path="edit" element={<ProfileEditForm />} />
-          <Route path="posts" element={<MyPostList />} />
-          <Route path="scrap" element={<ScrapList />} />
+          <Route path='profile' element={<ProfileView />} />
+          <Route path='edit' element={<ProfileEditForm />} />
+          <Route path='posts' element={<MyPostList />} />
+          <Route path='scrap' element={<ScrapList />} />
         </Route>
         <Route path='/recruit'>
           <Route index element={<RecruitPage />} />
